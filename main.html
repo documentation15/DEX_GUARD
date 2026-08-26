@@ -156,7 +156,7 @@ body::before {
 
 .wallet-modal {
     width: 100%;
-    max-width: 480px;
+    max-width: 580px;
     background: #151719;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
@@ -173,7 +173,7 @@ body::before {
 
 /* Scrollable Container for Wallets */
 .wallet-list-container {
-    max-height: 250px; /* Limits height so only roughly 6 wallets show at a time */
+    max-height: 320px; /* Sized to show exactly 6 rows on mobile before scrolling */
     overflow-y: auto;
     padding-right: 6px;
 }
@@ -197,9 +197,10 @@ body::before {
     background: var(--blue);
 }
 
+/* Default Mobile Layout: Single Column */
 .wallet-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 10px;
 }
 
@@ -209,7 +210,7 @@ body::before {
     justify-content: space-between;
     background: #ffffff;
     border-radius: 8px;
-    padding: 8px 10px;
+    padding: 10px 14px;
     text-decoration: none;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -222,13 +223,13 @@ body::before {
 .wallet-item-left {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     overflow: hidden;
 }
 
 .wallet-dot {
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background-color: #ffd700;
     flex-shrink: 0;
@@ -236,7 +237,7 @@ body::before {
 
 .wallet-name {
     color: #000000;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     white-space: nowrap;
     overflow: hidden;
@@ -244,8 +245,8 @@ body::before {
 }
 
 .wallet-logo {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     object-fit: contain;
     flex-shrink: 0;
     border-radius: 4px;
@@ -384,10 +385,31 @@ body::before {
 
 
 /* =====================================================
-   TABLET / DESKTOP
+   TABLET / DESKTOP RESPONSIVE BREAKPOINT
 ===================================================== */
 
 @media (min-width: 700px) {
+
+    .wallet-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .wallet-list-container {
+        max-height: 120px; /* Shows 6 items at a time in 3-column layout (2 rows) */
+    }
+
+    .wallet-name {
+        font-size: 11px;
+    }
+
+    .wallet-logo {
+        width: 20px;
+        height: 20px;
+    }
+
+    .wallet-item {
+        padding: 8px 10px;
+    }
 
     .footer-inner {
 
