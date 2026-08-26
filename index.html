@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
 
 <title>DEX GUARD</title>
 
 <style>
 
 /* =====================================================
-   BASIC RESET
+   RESET
 ===================================================== */
 
 * {
@@ -23,56 +27,19 @@ html {
 }
 
 body {
+    width: 100%;
     min-height: 100vh;
-    background: #050607;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
+
+    background: #050708;
+
+    color: white;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     overflow-x: hidden;
-}
-
-
-/* =====================================================
-   DARK GRAPH BACKGROUND
-===================================================== */
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            rgba(3, 5, 7, 0.88),
-            rgba(3, 5, 7, 0.94)
-        ),
-        url("graph-image.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    filter: brightness(0.45);
-
-    z-index: -3;
-}
-
-
-/* Extra dark overlay */
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(89, 215, 255, 0.08),
-            transparent 38%
-        );
-
-    pointer-events: none;
-    z-index: -2;
 }
 
 
@@ -81,16 +48,71 @@ body::after {
 ===================================================== */
 
 :root {
-    --blue: #62ddff;
-    --blue-light: #9aebff;
-    --blue-dark: #18bfe8;
 
-    --bg-card: rgba(7, 13, 16, 0.90);
+    --blue: #61dcff;
 
-    --border: rgba(98, 221, 255, 0.65);
+    --blue-bright: #a4edff;
 
-    --text: #ffffff;
-    --muted: #9ba5aa;
+    --blue-dark: #19bfe9;
+
+    --dark: #050708;
+
+    --card: rgba(7, 12, 15, 0.94);
+
+    --gray: #899398;
+
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(2, 5, 7, 0.91),
+            rgba(2, 5, 7, 0.96)
+        ),
+        url("graph-image.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    filter: brightness(0.40);
+
+    z-index: -5;
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(97, 220, 255, 0.08),
+            transparent 45%
+        );
+
+    pointer-events: none;
+
+    z-index: -4;
 }
 
 
@@ -99,35 +121,36 @@ body::after {
 ===================================================== */
 
 .header {
+
+    height: 48px;
+
     width: 100%;
-    height: 62px;
 
     display: flex;
+
     align-items: center;
 
-    padding: 0 22px;
+    padding-left: 12px;
 
-    background: rgba(3, 5, 6, 0.88);
+    background: rgba(2, 4, 5, 0.96);
 
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.04);
 
     position: relative;
+
     z-index: 10;
 }
 
+
 .logo {
-    width: 105px;
+
+    width: 78px;
+
     height: auto;
-    object-fit: contain;
-}
 
-
-/* =====================================================
-   MAIN
-===================================================== */
-
-main {
-    width: 100%;
+    display: block;
 }
 
 
@@ -136,51 +159,179 @@ main {
 ===================================================== */
 
 .hero {
-    min-height: 510px;
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 490px;
 
     display: flex;
-    flex-direction: column;
-    align-items: center;
+
     justify-content: center;
+
+    align-items: center;
 
     text-align: center;
 
-    padding: 60px 20px 40px;
-
-    position: relative;
+    padding:
+        80px 20px
+        40px;
 }
 
 
-/* Decorative glowing objects */
+.hero-content {
+
+    width: 100%;
+
+    max-width: 360px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   HERO TITLE
+===================================================== */
+
+.hero h1 {
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    line-height: 1.3;
+
+    margin-bottom: 17px;
+}
+
+
+.hero h1 span {
+
+    color: var(--blue);
+
+    text-shadow:
+        0 0 10px
+        rgba(97,220,255,0.25);
+}
+
+
+.hero p {
+
+    width: 100%;
+
+    color: #919a9e;
+
+    font-size: 7px;
+
+    line-height: 1.8;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.15px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =====================================================
+   CONNECT BUTTON
+===================================================== */
+
+.main-button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 120px;
+
+    height: 32px;
+
+    margin:
+        22px auto
+        0;
+
+    border-radius: 5px;
+
+    background: var(--blue);
+
+    color: #031116;
+
+    text-decoration: none;
+
+    font-size: 7px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.6px;
+
+    box-shadow:
+        0 0 7px
+        rgba(97,220,255,0.8),
+
+        0 0 18px
+        rgba(97,220,255,0.2);
+
+    transition: 0.2s;
+}
+
+
+.main-button:active {
+
+    transform: scale(0.94);
+
+    background:
+        var(--blue-bright);
+}
+
+
+/* =====================================================
+   FLOATING COINS
+===================================================== */
 
 .coin {
+
     position: absolute;
 
-    width: 62px;
-    height: 62px;
-
     border-radius: 50%;
-
-    border: 2px solid rgba(98,221,255,0.75);
 
     background:
         radial-gradient(
             circle at 35% 30%,
-            #bdf4ff,
-            #48d5f5 40%,
-            #087c9b 100%
+            #d7f9ff,
+            #54d8f7 38%,
+            #08748e 100%
         );
 
+    border:
+        1px solid
+        rgba(163,239,255,0.7);
+
     box-shadow:
-        0 0 18px rgba(98,221,255,0.5),
-        inset 0 0 10px rgba(255,255,255,0.35);
+        0 0 12px
+        rgba(97,220,255,0.35),
 
-    opacity: 0.75;
+        inset 0 0 7px
+        rgba(255,255,255,0.3);
 
-    animation: floating 5s ease-in-out infinite;
+    opacity: 0.65;
+
+    z-index: 1;
+
+    animation:
+        float 5s ease-in-out infinite;
 }
 
+
 .coin::after {
+
     content: "◈";
 
     position: absolute;
@@ -188,144 +339,74 @@ main {
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
-    font-size: 25px;
+    color: #074052;
 
-    color: #073c4b;
+    font-size: 19px;
 }
+
 
 .coin.one {
-    top: 45px;
-    left: 40%;
 
-    width: 68px;
-    height: 68px;
+    width: 55px;
+
+    height: 55px;
+
+    top: 42px;
+
+    left: 39%;
 }
+
 
 .coin.two {
-    top: 250px;
-    right: 12%;
 
-    width: 58px;
-    height: 58px;
+    width: 52px;
 
-    animation-delay: 1s;
+    height: 52px;
+
+    right: 8%;
+
+    top: 265px;
+
+    animation-delay: 1.5s;
 }
+
 
 .coin.three {
-    bottom: 20px;
+
+    width: 50px;
+
+    height: 50px;
+
     left: 12%;
 
-    width: 53px;
-    height: 53px;
+    bottom: 18px;
 
-    animation-delay: 2s;
+    animation-delay: 2.5s;
 }
 
-@keyframes floating {
 
-    0%,100% {
-        transform: translateY(0) rotate(0deg);
+@keyframes float {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
     }
 
     50% {
-        transform: translateY(-18px) rotate(8deg);
+        transform:
+            translateY(-13px)
+            rotate(7deg);
     }
-}
 
-
-/* =====================================================
-   HERO CONTENT
-===================================================== */
-
-.hero-content {
-    max-width: 700px;
-
-    position: relative;
-    z-index: 2;
-}
-
-.hero h1 {
-    font-size: 28px;
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 18px;
-}
-
-.hero h1 span {
-    color: var(--blue);
-}
-
-.hero p {
-    max-width: 650px;
-
-    margin: auto;
-
-    color: #aeb7ba;
-
-    font-size: 11px;
-
-    line-height: 1.8;
-
-    text-transform: uppercase;
-}
-
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.main-button {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 28px;
-
-    min-width: 145px;
-    height: 39px;
-
-    padding: 0 22px;
-
-    border: none;
-    border-radius: 6px;
-
-    background: var(--blue);
-
-    color: #031116;
-
-    font-size: 10px;
-    font-weight: 900;
-
-    letter-spacing: 0.5px;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 0 8px rgba(98,221,255,0.7),
-        0 0 20px rgba(98,221,255,0.25);
-
-    transition: 0.25s ease;
-}
-
-.main-button:hover {
-    background: var(--blue-light);
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 0 12px rgba(98,221,255,0.9),
-        0 0 28px rgba(98,221,255,0.4);
-}
-
-.main-button:active {
-    transform: scale(0.96);
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
 }
 
 
@@ -334,56 +415,69 @@ main {
 ===================================================== */
 
 .get-started {
+
     width: 100%;
 
-    padding: 30px 20px 80px;
+    padding:
+        20px 10px
+        55px;
 }
 
+
 .section-title {
+
     text-align: center;
 
-    margin-bottom: 25px;
-
-    color: #ffffff;
-
-    font-size: 13px;
+    font-size: 8px;
 
     font-weight: 800;
 
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
+
+    margin-bottom: 22px;
 }
 
+
 .section-title::after {
+
     content: "";
 
     display: block;
 
-    width: 45px;
-    height: 2px;
+    width: 32px;
 
-    margin: 10px auto 0;
+    height: 1px;
+
+    margin:
+        8px auto
+        0;
 
     background: var(--blue);
 
-    box-shadow: 0 0 10px var(--blue);
+    box-shadow:
+        0 0 7px
+        var(--blue);
 }
 
 
 /* =====================================================
-   CARDS GRID
+   MOBILE CARDS
 ===================================================== */
 
 .cards {
+
     width: 100%;
-    max-width: 850px;
+
+    max-width: 410px;
 
     margin: auto;
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
-    gap: 12px;
+    gap: 8px;
 }
 
 
@@ -392,114 +486,160 @@ main {
 ===================================================== */
 
 .card {
-    min-height: 112px;
 
-    padding: 14px 10px 12px;
+    width: 100%;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(15,23,27,0.96),
-            rgba(4,8,10,0.95)
-        );
+    min-height: 103px;
 
-    border: 1px solid var(--border);
-
-    border-radius: 7px;
+    padding:
+        10px 6px
+        8px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 
     text-align: center;
 
+    background:
+        linear-gradient(
+            145deg,
+            rgba(14,21,24,0.96),
+            rgba(4,7,9,0.96)
+        );
+
+    border:
+        1px solid
+        rgba(97,220,255,0.52);
+
+    border-radius: 6px;
+
     box-shadow:
-        0 0 7px rgba(98,221,255,0.12),
-        inset 0 0 15px rgba(98,221,255,0.025);
+        0 0 5px
+        rgba(97,220,255,0.13),
+
+        inset 0 0 12px
+        rgba(97,220,255,0.025);
 
     transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
+        0.2s ease;
 }
 
-.card:hover {
-    transform: translateY(-4px);
 
-    border-color: var(--blue-light);
+.card:active {
+
+    transform:
+        scale(0.96);
+
+    border-color:
+        var(--blue);
 
     box-shadow:
-        0 0 10px rgba(98,221,255,0.35),
-        0 0 24px rgba(98,221,255,0.12);
-}
-
-.card h3 {
-    width: 100%;
-
-    font-size: 8px;
-
-    color: #ffffff;
-
-    letter-spacing: 0.6px;
-
-    margin-bottom: 7px;
-
-    text-transform: uppercase;
-}
-
-.card p {
-    flex: 1;
-
-    font-size: 6.5px;
-
-    line-height: 1.55;
-
-    color: #929da1;
-
-    margin-bottom: 9px;
+        0 0 10px
+        rgba(97,220,255,0.45);
 }
 
 
 /* =====================================================
-   CARD BUTTON
+   CARD TITLE
+===================================================== */
+
+.card h3 {
+
+    width: 100%;
+
+    min-height: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #ffffff;
+
+    font-size: 6px;
+
+    line-height: 1.25;
+
+    font-weight: 800;
+
+    letter-spacing: 0.35px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 5px;
+}
+
+
+/* =====================================================
+   CARD DESCRIPTION
+===================================================== */
+
+.card p {
+
+    flex: 1;
+
+    width: 100%;
+
+    color: #818b8f;
+
+    font-size: 5.3px;
+
+    line-height: 1.5;
+
+    margin-bottom: 7px;
+}
+
+
+/* =====================================================
+   PROCEED BUTTON
 ===================================================== */
 
 .card-button {
+
+    width: 52px;
+
+    height: 19px;
+
     display: flex;
 
-    align-items: center;
     justify-content: center;
 
-    min-width: 55px;
-    height: 22px;
+    align-items: center;
 
-    padding: 0 8px;
-
-    background: var(--blue);
-
-    border-radius: 4px;
+    background:
+        var(--blue);
 
     color: #031116;
 
-    font-size: 6.5px;
-
-    font-weight: 900;
+    border-radius: 4px;
 
     text-decoration: none;
 
-    box-shadow:
-        0 0 7px rgba(98,221,255,0.55);
+    font-size: 5.4px;
 
-    transition: 0.2s ease;
+    font-weight: 900;
+
+    letter-spacing: 0.25px;
+
+    box-shadow:
+        0 0 6px
+        rgba(97,220,255,0.65);
+
+    transition: 0.2s;
 }
 
-.card-button:hover {
-    background: var(--blue-light);
 
-    box-shadow:
-        0 0 12px rgba(98,221,255,0.8);
+.card-button:active {
 
-    transform: scale(1.04);
+    transform:
+        scale(0.90);
+
+    background:
+        var(--blue-bright);
 }
 
 
@@ -508,211 +648,195 @@ main {
 ===================================================== */
 
 .footer {
+
     width: 100%;
 
-    padding: 45px 25px 35px;
+    padding:
+        35px 18px
+        28px;
 
-    background: rgba(12, 15, 17, 0.96);
+    background:
+        rgba(13,16,18,0.98);
 
-    border-top: 1px solid rgba(255,255,255,0.04);
-
-    text-align: left;
+    border-top:
+        1px solid
+        rgba(255,255,255,0.04);
 }
 
+
 .footer-inner {
-    max-width: 850px;
+
+    width: 100%;
+
+    max-width: 410px;
 
     margin: auto;
 }
 
-.footer-logo {
-    width: 88px;
 
-    margin-bottom: 18px;
+.footer-logo {
+
+    width: 75px;
+
+    height: auto;
+
+    margin-bottom: 16px;
 }
 
+
 .footer h3 {
-    font-size: 10px;
+
+    font-size: 8px;
+
+    margin-bottom: 9px;
 
     color: #ffffff;
+}
+
+
+.footer p {
+
+    color: #697376;
+
+    font-size: 6px;
+
+    line-height: 1.8;
 
     margin-bottom: 10px;
 }
 
-.footer p {
-    color: #777f82;
-
-    font-size: 7px;
-
-    line-height: 1.9;
-
-    margin-bottom: 13px;
-
-    max-width: 760px;
-}
 
 .footer-line {
+
+    width: 100%;
+
     height: 1px;
 
-    background: rgba(255,255,255,0.06);
+    background:
+        rgba(255,255,255,0.06);
 
-    margin: 20px 0;
+    margin:
+        18px 0;
 }
 
+
 .footer-bottom {
+
     display: flex;
 
     justify-content: space-between;
 
     align-items: center;
 
-    gap: 20px;
+    gap: 10px;
 
-    color: #646d70;
+    color: #555f62;
 
-    font-size: 7px;
-}
-
-.footer-bottom span {
-    color: var(--blue);
+    font-size: 5.5px;
 }
 
 
-/* =====================================================
-   RESPONSIVE TABLET
-===================================================== */
+.footer-bottom span:first-child {
 
-@media (max-width: 650px) {
-
-    .header {
-        height: 55px;
-        padding: 0 15px;
-    }
-
-    .logo {
-        width: 90px;
-    }
-
-    .hero {
-        min-height: 470px;
-
-        padding-top: 70px;
-    }
-
-    .hero h1 {
-        font-size: 21px;
-    }
-
-    .hero p {
-        font-size: 8px;
-
-        line-height: 1.75;
-    }
-
-    .cards {
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 8px;
-    }
-
-    .card {
-        min-height: 108px;
-
-        padding: 12px 7px;
-    }
-
-    .card h3 {
-        font-size: 7px;
-    }
-
-    .card p {
-        font-size: 5.8px;
-    }
-
-    .card-button {
-        height: 20px;
-
-        font-size: 6px;
-    }
-
-    .footer {
-        padding: 35px 18px 28px;
-    }
+    color:
+        var(--blue);
 }
 
 
 /* =====================================================
-   SMALL PHONE
+   VERY SMALL PHONES
 ===================================================== */
 
-@media (max-width: 380px) {
-
-    .hero {
-        min-height: 440px;
-    }
-
-    .hero h1 {
-        font-size: 18px;
-    }
-
-    .hero p {
-        font-size: 7px;
-    }
-
-    .main-button {
-        height: 35px;
-
-        min-width: 125px;
-
-        font-size: 8px;
-    }
+@media (max-width: 340px) {
 
     .cards {
-        gap: 7px;
+
+        gap: 6px;
     }
+
 
     .card {
-        min-height: 104px;
 
-        padding: 10px 5px;
+        min-height: 98px;
+
+        padding:
+            8px 4px;
     }
+
 
     .card h3 {
-        font-size: 6.5px;
-    }
-
-    .card p {
-        font-size: 5.2px;
-    }
-
-    .card-button {
-        min-width: 50px;
-
-        height: 19px;
 
         font-size: 5.5px;
     }
 
-    .coin.one {
-        left: 37%;
+
+    .card p {
+
+        font-size: 4.8px;
+    }
+
+
+    .card-button {
+
+        width: 48px;
+
+        height: 18px;
+
+        font-size: 5px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 17px;
     }
 }
 
 
 /* =====================================================
-   ACCESSIBILITY
+   LARGER PHONES
 ===================================================== */
 
-a {
-    -webkit-tap-highlight-color: transparent;
-}
+@media (min-width: 430px) {
 
-button,
-a {
-    touch-action: manipulation;
+    .cards {
+
+        max-width: 410px;
+
+        gap: 9px;
+    }
+
+
+    .card {
+
+        min-height: 110px;
+    }
+
+
+    .card h3 {
+
+        font-size: 6.5px;
+    }
+
+
+    .card p {
+
+        font-size: 5.7px;
+    }
+
+
+    .card-button {
+
+        width: 57px;
+
+        height: 21px;
+
+        font-size: 5.8px;
+    }
 }
 
 </style>
+
 </head>
 
 
@@ -725,12 +849,12 @@ a {
 
 <header class="header">
 
-    <a href="index.html" aria-label="DEX GUARD Home">
+    <a href="index.html">
 
         <img
             src="1787770720214.png"
-            alt="DEX GUARD"
             class="logo"
+            alt="DEX GUARD"
         >
 
     </a>
@@ -740,505 +864,472 @@ a {
 
 
 <!-- =====================================================
-     MAIN
+     HERO
 ===================================================== -->
 
-<main>
+<section class="hero">
 
 
-    <!-- HERO -->
+    <div class="coin one"></div>
 
-    <section class="hero">
+    <div class="coin two"></div>
 
-
-        <!-- Floating decorations -->
-
-        <div class="coin one"></div>
-        <div class="coin two"></div>
-        <div class="coin three"></div>
+    <div class="coin three"></div>
 
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-            <h1>
-                WELCOME TO
-                <span>DEX GUARD</span>
-            </h1>
+        <h1>
+            WELCOME TO
+            <span>DEX GUARD</span>
+        </h1>
 
+
+        <p>
+            Welcome to DEX Guard, your trusted Web3
+            security assistant. Protect your wallet,
+            identify potential threats and navigate
+            decentralized applications with confidence.
+        </p>
+
+
+        <p>
+            Our security tools are designed to help
+            you understand common wallet problems
+            and blockchain related issues.
+        </p>
+
+
+        <a
+            href="index.html"
+            class="main-button"
+        >
+            CONNECT WALLET
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     OPTIONS
+===================================================== -->
+
+<section class="get-started">
+
+    <h2 class="section-title">
+        GET STARTED BELOW.
+    </h2>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>HESITATION</h3>
 
             <p>
-                Welcome to DEX Guard, your trusted Web3 security
-                assistant. Protect your wallet, identify potential
-                threats and navigate decentralized applications
-                with confidence.
+                Having trouble deciding what to do?
             </p>
 
-
-            <p>
-                Our security tools are designed to help you
-                understand common wallet problems and blockchain
-                related issues.
-            </p>
-
-
-            <!-- CONNECT WALLET -->
-
-            <a
-                href="index.html"
-                class="main-button"
-            >
-                VALIDATE WALLET
+            <a href="index.html"
+               class="card-button">
+                PROCEED
             </a>
 
         </div>
 
-    </section>
 
+        <div class="card">
 
+            <h3>NOTIFICATION</h3>
 
-    <!-- =================================================
-         GET STARTED
-    ================================================== -->
+            <p>
+                Review important wallet notifications.
+            </p>
 
-    <section class="get-started">
-
-        <h2 class="section-title">
-            GET STARTED BELOW.
-        </h2>
-
-
-        <div class="cards">
-
-
-            <!-- CARD 1 -->
-
-            <div class="card">
-                <h3>HESITATION</h3>
-
-                <p>
-                    Having trouble deciding what to do?
-                    Continue to check available options.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 2 -->
-
-            <div class="card">
-                <h3>NOTIFICATION</h3>
-
-                <p>
-                    Review important wallet and account
-                    notifications.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 3 -->
-
-            <div class="card">
-                <h3>CLAIM</h3>
-
-                <p>
-                    Check your available claim options
-                    and continue.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 4 -->
-
-            <div class="card">
-                <h3>SWAP</h3>
-
-                <p>
-                    Having an issue with a token swap?
-                    Continue for assistance.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 5 -->
-
-            <div class="card">
-                <h3>AIRDROP</h3>
-
-                <p>
-                    Check information regarding an
-                    available airdrop.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 6 -->
-
-            <div class="card">
-                <h3>NFTS</h3>
-
-                <p>
-                    Review NFT related wallet issues
-                    and available options.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 7 -->
-
-            <div class="card">
-                <h3>LOCKED ACCOUNT</h3>
-
-                <p>
-                    Your account appears to be locked?
-                    Continue to review the issue.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 8 -->
-
-            <div class="card">
-                <h3>LOGIN ERROR</h3>
-
-                <p>
-                    Experiencing problems accessing
-                    your account?
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 9 -->
-
-            <div class="card">
-                <h3>WALLET GLITCH</h3>
-
-                <p>
-                    Wallet isn't behaving as expected?
-                    Check available options.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 10 -->
-
-            <div class="card">
-                <h3>DECLINING</h3>
-
-                <p>
-                    A transaction or request keeps
-                    getting declined.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 11 -->
-
-            <div class="card">
-                <h3>VALIDATION</h3>
-
-                <p>
-                    Review wallet validation and
-                    verification information.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 12 -->
-
-            <div class="card">
-                <h3>TRANSACTION DELAY</h3>
-
-                <p>
-                    Your blockchain transaction appears
-                    to be taking longer than expected.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 13 -->
-
-            <div class="card">
-                <h3>MISSING/INSUFFICIENT BALANCE</h3>
-
-                <p>
-                    Your balance doesn't appear to
-                    match your expectations.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 14 -->
-
-            <div class="card">
-                <h3>RECOVERY</h3>
-
-                <p>
-                    Need assistance recovering access
-                    to your wallet?
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 15 -->
-
-            <div class="card">
-                <h3>BUY TOKEN</h3>
-
-                <p>
-                    Having an issue purchasing or
-                    receiving a token?
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 16 -->
-
-            <div class="card">
-                <h3>PURCHASE</h3>
-
-                <p>
-                    Review problems associated with
-                    a recent purchase.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 17 -->
-
-            <div class="card">
-                <h3>BALANCE</h3>
-
-                <p>
-                    Check common wallet balance
-                    related problems.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 18 -->
-
-            <div class="card">
-                <h3>TWO-FACTOR AUTHENTICATION</h3>
-
-                <p>
-                    Problems with account security
-                    or authentication?
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 19 -->
-
-            <div class="card">
-                <h3>SECURITY ISSUE</h3>
-
-                <p>
-                    Review security-related issues
-                    affecting your account.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 20 -->
-
-            <div class="card">
-                <h3>FUNDS</h3>
-
-                <p>
-                    Having trouble locating or
-                    accessing your funds?
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 21 -->
-
-            <div class="card">
-                <h3>MACHINE FOUND</h3>
-
-                <p>
-                    Review information regarding
-                    detected activity.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 22 -->
-
-            <div class="card">
-                <h3>FAILED TRANSACTION</h3>
-
-                <p>
-                    Your transaction failed?
-                    Review available assistance.
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 23 -->
-
-            <div class="card">
-                <h3>DEPOSIT</h3>
-
-                <p>
-                    Problems with a deposit or
-                    incoming transaction?
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 24 -->
-
-            <div class="card">
-                <h3>WALLET SYNC</h3>
-
-                <p>
-                    Your wallet isn't synchronizing
-                    correctly?
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
-
-
-            <!-- CARD 25 -->
-
-            <div class="card">
-                <h3>WITHDRAWAL</h3>
-
-                <p>
-                    Having trouble completing a
-                    withdrawal?
-                </p>
-
-                <a href="index.html" class="card-button">
-                    PROCEED
-                </a>
-            </div>
-
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
 
         </div>
 
-    </section>
 
-</main>
+        <div class="card">
+
+            <h3>CLAIM</h3>
+
+            <p>
+                Check your available claim options.
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>SWAP</h3>
+
+            <p>
+                Having trouble with a token swap?
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>AIRDROP</h3>
+
+            <p>
+                Check available airdrop information.
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>NFTS</h3>
+
+            <p>
+                Review NFT related wallet issues.
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>LOCKED ACCOUNT</h3>
+
+            <p>
+                Your account appears to be locked.
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>LOGIN ERROR</h3>
+
+            <p>
+                Problems accessing your account?
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>WALLET GLITCH</h3>
+
+            <p>
+                Wallet isn't behaving as expected.
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>DECLINING</h3>
+
+            <p>
+                A transaction keeps getting declined.
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>VALIDATION</h3>
+
+            <p>
+                Review wallet verification information.
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>TRANSACTION DELAY</h3>
+
+            <p>
+                Your transaction is taking too long.
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>INSUFFICIENT BALANCE</h3>
+
+            <p>
+                Your balance doesn't appear correct.
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>RECOVERY</h3>
+
+            <p>
+                Need assistance recovering access?
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>BUY TOKEN</h3>
+
+            <p>
+                Problems purchasing a token?
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>PURCHASE</h3>
+
+            <p>
+                Review a recent purchase problem.
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>BALANCE</h3>
+
+            <p>
+                Check wallet balance related problems.
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>TWO-FACTOR AUTHENTICATION</h3>
+
+            <p>
+                Problems with authentication?
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>SECURITY ISSUE</h3>
+
+            <p>
+                Review security related issues.
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>FUNDS</h3>
+
+            <p>
+                Trouble locating your funds?
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>MACHINE FOUND</h3>
+
+            <p>
+                Review detected activity information.
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>FAILED TRANSACTION</h3>
+
+            <p>
+                Your blockchain transaction failed?
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>DEPOSIT</h3>
+
+            <p>
+                Problems with an incoming deposit?
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>WALLET SYNC</h3>
+
+            <p>
+                Your wallet isn't synchronizing?
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>WITHDRAWAL</h3>
+
+            <p>
+                Having trouble with a withdrawal?
+            </p>
+
+            <a href="index.html"
+               class="card-button">
+                PROCEED
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
 
 
 
@@ -1253,8 +1344,8 @@ a {
 
         <img
             src="1787770720214.png"
-            alt="DEX GUARD"
             class="footer-logo"
+            alt="DEX GUARD"
         >
 
 
@@ -1264,22 +1355,22 @@ a {
 
 
         <p>
-            DEX Guard provides a simple interface for
-            reviewing common decentralized wallet and
-            blockchain related issues.
+            DEX Guard provides a simple interface
+            for reviewing common decentralized
+            wallet and blockchain related issues.
         </p>
 
 
         <p>
-            Always verify information carefully before
-            approving transactions, connecting wallets,
-            signing messages or interacting with
-            decentralized applications.
+            Always verify information carefully
+            before approving transactions, signing
+            messages or interacting with decentralized
+            applications.
         </p>
 
 
         <p>
-            DEX Guard does not request or store your
+            DEX Guard does not request or store
             private keys, seed phrases or recovery
             phrases.
         </p>
@@ -1299,6 +1390,7 @@ a {
             </span>
 
         </div>
+
 
     </div>
 
