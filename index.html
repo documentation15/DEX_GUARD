@@ -778,7 +778,17 @@ body::before {
 
     .cards {
 
-        max-width: 430px;
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 24px;
+
+        max-width: 1200px;
+
+        margin: 0 auto;
+
+        padding: 0 20px;
     }
 
 
@@ -786,13 +796,15 @@ body::before {
 
         width: 100%;
 
+        max-width: none;
+
         min-height: 180px;
     }
 
 
     .footer-inner {
 
-        max-width: 430px;
+        max-width: 1200px;
     }
 
 }
