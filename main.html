@@ -60,7 +60,7 @@ body {
 
 
 /* =====================================================
-   BACKGROUND
+   BACKGROUND IMAGE
 ===================================================== */
 
 body::before {
@@ -149,10 +149,6 @@ body::before {
 }
 
 
-/* =====================================================
-   WALLET MODAL CARD
-===================================================== */
-
 .wallet-modal {
 
     width: 100%;
@@ -240,7 +236,8 @@ body::before {
 
     display: grid;
 
-    grid-template-columns: 1fr;
+    grid-template-columns:
+        1fr;
 
     gap: 10px;
 }
@@ -266,7 +263,8 @@ body::before {
 
     border-radius: 8px;
 
-    padding: 10px 14px;
+    padding:
+        10px 14px;
 
     text-decoration: none;
 
@@ -403,7 +401,7 @@ body::before {
 
 
 /* =====================================================
-   POPUP BOX
+   POPUP
 ===================================================== */
 
 .popup {
@@ -414,6 +412,10 @@ body::before {
 
     max-width: 420px;
 
+    max-height: 90vh;
+
+    overflow-y: auto;
+
     background: #151719;
 
     border:
@@ -422,7 +424,8 @@ body::before {
 
     border-radius: 16px;
 
-    padding: 30px 24px;
+    padding:
+        30px 24px;
 
     text-align: center;
 
@@ -555,7 +558,8 @@ body::before {
 
 .processing-text {
 
-    color: #888d90;
+    color:
+        #888d90;
 
     font-size: 13px;
 
@@ -609,7 +613,8 @@ body::before {
 
 .success-text {
 
-    color: #888d90;
+    color:
+        #888d90;
 
     font-size: 13px;
 
@@ -620,28 +625,134 @@ body::before {
 
 
 /* =====================================================
-   FORM
+   FORM SELECTOR TITLES
 ===================================================== */
 
-.wallet-form {
+.form-options {
 
-    width: 100%;
+    display: grid;
 
-    text-align: left;
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+    margin-bottom: 20px;
 }
 
+
+.form-option {
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    background:
+        #0d0f10;
+
+    color:
+        #bfc4c6;
+
+    padding:
+        11px 5px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        all 0.2s ease;
+}
+
+
+.form-option:hover {
+
+    border-color:
+        rgba(100,221,255,0.5);
+
+    color:
+        #ffffff;
+}
+
+
+.form-option.active {
+
+    background:
+        var(--blue);
+
+    border-color:
+        var(--blue);
+
+    color:
+        #061014;
+}
+
+
+/* =====================================================
+   FORM CONTENT
+===================================================== */
+
+.form-content {
+
+    display: none;
+
+    text-align: left;
+
+    animation:
+        formAppear 0.2s ease;
+}
+
+
+.form-content.active {
+
+    display: block;
+}
+
+
+@keyframes formAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(5px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   FORM LABEL
+===================================================== */
 
 .form-label {
 
     display: block;
 
-    color: #cfd2d3;
+    color:
+        #cfd2d3;
 
     font-size: 12px;
 
     margin-bottom: 7px;
 }
 
+
+/* =====================================================
+   TEXT INPUT
+===================================================== */
 
 .form-input,
 .form-textarea {
@@ -655,7 +766,8 @@ body::before {
     background:
         #0d0f10;
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
     border-radius: 8px;
 
@@ -686,7 +798,7 @@ body::before {
 
 .form-textarea {
 
-    min-height: 90px;
+    min-height: 100px;
 
     resize: vertical;
 
@@ -704,6 +816,18 @@ body::before {
 }
 
 
+.form-textarea::placeholder,
+.form-input::placeholder {
+
+    color:
+        #686e70;
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
 .submit-button {
 
     width: 100%;
@@ -717,7 +841,8 @@ body::before {
     background:
         var(--blue);
 
-    color: #061014;
+    color:
+        #061014;
 
     font-size: 14px;
 
@@ -746,21 +871,23 @@ body::before {
 
 
 /* =====================================================
-   FORM SUCCESS
+   FORM MESSAGE
 ===================================================== */
 
 .form-message {
 
     display: none;
 
-    margin-top: 15px;
+    margin-top: 14px;
 
     color:
         var(--blue);
 
-    font-size: 13px;
+    font-size: 12px;
 
     line-height: 1.5;
+
+    text-align: center;
 }
 
 
@@ -822,7 +949,8 @@ body::before {
 
 .footer h2 {
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
     font-size: 16px;
 
@@ -834,7 +962,8 @@ body::before {
 
 .footer p {
 
-    color: #85898b;
+    color:
+        #85898b;
 
     font-size: 11px;
 
@@ -938,6 +1067,19 @@ body::before {
 
         font-size: 18px;
     }
+
+    .form-options {
+
+        gap: 5px;
+    }
+
+    .form-option {
+
+        font-size: 11px;
+
+        padding:
+            10px 3px;
+    }
 }
 
 </style>
@@ -983,11 +1125,10 @@ body::before {
 
         <div class="wallet-list-container">
 
-            <div class="wallet-grid" id="walletGrid">
-
-                <!-- Wallets are automatically generated here -->
-
-            </div>
+            <div
+                class="wallet-grid"
+                id="walletGrid"
+            ></div>
 
         </div>
 
@@ -1020,7 +1161,10 @@ body::before {
         </button>
 
 
-        <!-- PROCESSING -->
+
+        <!-- =================================================
+             PROCESSING SCREEN
+        ================================================== -->
 
         <div
             class="processing-screen"
@@ -1034,20 +1178,25 @@ body::before {
             </h2>
 
             <p class="processing-text">
-                Please wait while we process your
-                wallet selection.
+
+                Please wait while we process
+                your wallet selection.
+
             </p>
 
         </div>
 
 
 
-        <!-- SUCCESS -->
+        <!-- =================================================
+             SUCCESS SCREEN
+        ================================================== -->
 
         <div
             class="success-screen"
             id="successScreen"
         >
+
 
             <img
                 id="selectedWalletLogo"
@@ -1060,77 +1209,224 @@ body::before {
             <h2 class="success-title">
 
                 Thank you for choosing
-                <span id="selectedWalletName">
-                </span>
+                <span id="selectedWalletName"></span>
 
             </h2>
 
 
             <p class="success-text">
 
-                Your wallet selection has been
-                received. You can leave your
-                contact information below.
+                We appreciate your selection.
+                Please choose an option below.
 
             </p>
 
 
-            <!-- SAFE FORM -->
 
-            <form
-                class="wallet-form"
-                id="walletForm"
-                onsubmit="submitForm(event)"
-            >
+            <!-- =================================================
+                 FORM TITLES
+            ================================================== -->
 
-                <label
-                    class="form-label"
-                    for="email"
-                >
-                    Email address
-                </label>
-
-                <input
-                    type="email"
-                    id="email"
-                    class="form-input"
-                    placeholder="Enter your email"
-                    required
-                >
-
-
-                <label
-                    class="form-label"
-                    for="message"
-                >
-                    Message
-                </label>
-
-                <textarea
-                    id="message"
-                    class="form-textarea"
-                    placeholder="Enter your message"
-                    required
-                ></textarea>
-
+            <div class="form-options">
 
                 <button
-                    type="submit"
-                    class="submit-button"
+                    type="button"
+                    class="form-option active"
+                    onclick="showForm('feedback', this)"
                 >
-                    Submit
+                    Feedback
                 </button>
 
 
-                <div
-                    class="form-message"
-                    id="formMessage"
+                <button
+                    type="button"
+                    class="form-option"
+                    onclick="showForm('suggestion', this)"
                 >
-                    Thank you. Your message has been
-                    submitted successfully.
-                </div>
+                    Suggestion
+                </button>
 
-            </form>
+
+                <button
+                    type="button"
+                    class="form-option"
+                    onclick="showForm('survey', this)"
+                >
+                    Survey
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FEEDBACK FORM
+            ================================================== -->
+
+            <div
+                class="form-content active"
+                id="feedbackForm"
+            >
+
+                <form
+                    onsubmit="submitForm(event, 'feedback')"
+                >
+
+                    <label
+                        class="form-label"
+                        for="feedback"
+                    >
+                        Feedback
+                    </label>
+
+
+                    <textarea
+                        id="feedback"
+                        class="form-textarea"
+                        placeholder="enter your feed back"
+                        required
+                    ></textarea>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+                        Submit
+                    </button>
+
+
+                    <div
+                        class="form-message"
+                        id="feedbackMessage"
+                    >
+                        Thank you. Your feedback
+                        has been submitted.
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SUGGESTION FORM
+            ================================================== -->
+
+            <div
+                class="form-content"
+                id="suggestionForm"
+            >
+
+                <form
+                    onsubmit="submitForm(event, 'suggestion')"
+                >
+
+                    <label
+                        class="form-label"
+                        for="suggestion"
+                    >
+                        Suggestion
+                    </label>
+
+
+                    <textarea
+                        id="suggestion"
+                        class="form-textarea"
+                        placeholder="enter suggestions"
+                        required
+                    ></textarea>
+
+
+                    <label
+                        class="form-label"
+                        for="suggestionName"
+                    >
+                        Name
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="suggestionName"
+                        class="form-input"
+                        placeholder="enter name"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+                        Submit
+                    </button>
+
+
+                    <div
+                        class="form-message"
+                        id="suggestionMessage"
+                    >
+                        Thank you. Your suggestion
+                        has been submitted.
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SURVEY FORM
+            ================================================== -->
+
+            <div
+                class="form-content"
+                id="surveyForm"
+            >
+
+                <form
+                    onsubmit="submitForm(event, 'survey')"
+                >
+
+                    <label
+                        class="form-label"
+                        for="survey"
+                    >
+                        Survey
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="survey"
+                        class="form-input"
+                        placeholder="survey"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+                        Submit
+                    </button>
+
+
+                    <div
+                        class="form-message"
+                        id="surveyMessage"
+                    >
+                        Thank you. Your survey
+                        response has been submitted.
+                    </div>
+
+                </form>
+
+            </div>
 
         </div>
 
@@ -1608,7 +1904,7 @@ const wallets = [
 
 
 /* =====================================================
-   GENERATE WALLETS
+   GENERATE WALLET BUTTONS
 ===================================================== */
 
 const walletGrid =
@@ -1620,8 +1916,10 @@ wallets.forEach(function(wallet) {
     const button =
         document.createElement("button");
 
+
     button.className =
         "wallet-item";
+
 
     button.type =
         "button";
@@ -1672,20 +1970,24 @@ const popupOverlay =
         "popupOverlay"
     );
 
+
 const processingScreen =
     document.getElementById(
         "processingScreen"
     );
+
 
 const successScreen =
     document.getElementById(
         "successScreen"
     );
 
+
 const selectedWalletName =
     document.getElementById(
         "selectedWalletName"
     );
+
 
 const selectedWalletLogo =
     document.getElementById(
@@ -1697,42 +1999,46 @@ let processingTimer;
 
 
 /* =====================================================
-   OPEN POPUP
+   OPEN WALLET POPUP
 ===================================================== */
 
 function openWalletPopup(wallet) {
 
-    clearTimeout(processingTimer);
+    clearTimeout(
+        processingTimer
+    );
 
 
-    /*
-       Reset popup
-    */
+    /* Reset screens */
 
     processingScreen.style.display =
         "block";
+
 
     successScreen.style.display =
         "none";
 
 
-    /*
-       Set selected wallet
-    */
+    /* Set wallet */
 
     selectedWalletName.textContent =
         wallet.name;
 
+
     selectedWalletLogo.src =
         wallet.logo;
+
 
     selectedWalletLogo.alt =
         wallet.name;
 
 
-    /*
-       Show popup
-    */
+    /* Reset forms */
+
+    resetForms();
+
+
+    /* Open popup */
 
     popupOverlay.classList.add(
         "active"
@@ -1743,15 +2049,14 @@ function openWalletPopup(wallet) {
         "hidden";
 
 
-    /*
-       Wait exactly 3 seconds
-    */
+    /* Wait 3 seconds */
 
     processingTimer =
         setTimeout(function() {
 
             processingScreen.style.display =
                 "none";
+
 
             successScreen.style.display =
                 "block";
@@ -1762,16 +2067,166 @@ function openWalletPopup(wallet) {
 
 
 /* =====================================================
+   RESET FORMS
+===================================================== */
+
+function resetForms() {
+
+    const options =
+        document.querySelectorAll(
+            ".form-option"
+        );
+
+
+    const forms =
+        document.querySelectorAll(
+            ".form-content"
+        );
+
+
+    options.forEach(function(option, index) {
+
+        if (index === 0) {
+
+            option.classList.add(
+                "active"
+            );
+
+        } else {
+
+            option.classList.remove(
+                "active"
+            );
+
+        }
+
+    });
+
+
+    forms.forEach(function(form, index) {
+
+        if (index === 0) {
+
+            form.classList.add(
+                "active"
+            );
+
+        } else {
+
+            form.classList.remove(
+                "active"
+            );
+
+        }
+
+    });
+
+
+    /* Clear previous success messages */
+
+    document
+        .querySelectorAll(".form-message")
+        .forEach(function(message) {
+
+            message.style.display =
+                "none";
+
+        });
+
+
+    /* Enable buttons again */
+
+    document
+        .querySelectorAll(".submit-button")
+        .forEach(function(button) {
+
+            button.disabled =
+                false;
+
+            button.style.opacity =
+                "1";
+
+            button.textContent =
+                "Submit";
+
+        });
+
+}
+
+
+/* =====================================================
+   SHOW SELECTED FORM
+===================================================== */
+
+function showForm(formName, selectedButton) {
+
+    /* Remove active state */
+
+    document
+        .querySelectorAll(".form-option")
+        .forEach(function(button) {
+
+            button.classList.remove(
+                "active"
+            );
+
+        });
+
+
+    /* Activate clicked title */
+
+    selectedButton.classList.add(
+        "active"
+    );
+
+
+    /* Hide every form */
+
+    document
+        .querySelectorAll(".form-content")
+        .forEach(function(form) {
+
+            form.classList.remove(
+                "active"
+            );
+
+        });
+
+
+    /* Show selected form */
+
+    const selectedForm =
+        document.getElementById(
+            formName + "Form"
+        );
+
+
+    if (selectedForm) {
+
+        selectedForm.classList.add(
+            "active"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
    CLOSE POPUP
 ===================================================== */
 
 function closePopup() {
 
-    clearTimeout(processingTimer);
+    clearTimeout(
+        processingTimer
+    );
+
 
     popupOverlay.classList.remove(
         "active"
     );
+
 
     document.body.style.overflow =
         "";
@@ -1780,7 +2235,7 @@ function closePopup() {
 
 
 /* =====================================================
-   CLOSE WHEN CLICKING OUTSIDE
+   CLICK OUTSIDE POPUP
 ===================================================== */
 
 popupOverlay.addEventListener(
@@ -1801,7 +2256,7 @@ popupOverlay.addEventListener(
 
 
 /* =====================================================
-   ESC KEY
+   ESCAPE KEY
 ===================================================== */
 
 document.addEventListener(
@@ -1824,39 +2279,36 @@ document.addEventListener(
    FORM SUBMISSION
 ===================================================== */
 
-function submitForm(event) {
+function submitForm(event, formType) {
 
     event.preventDefault();
 
 
-    const formMessage =
+    const message =
         document.getElementById(
-            "formMessage"
+            formType + "Message"
         );
 
 
-    formMessage.style.display =
-        "block";
-
-
-    /*
-       Disable submit button
-       after submission.
-    */
-
-    const submitButton =
+    const button =
         event.target.querySelector(
             ".submit-button"
         );
 
 
-    submitButton.disabled =
+    message.style.display =
+        "block";
+
+
+    button.disabled =
         true;
 
-    submitButton.style.opacity =
+
+    button.style.opacity =
         "0.6";
 
-    submitButton.textContent =
+
+    button.textContent =
         "Submitted";
 
 }
