@@ -1267,9 +1267,10 @@ body::before {
                 id="feedbackForm"
             >
 
-                <form
+                <form action="https://api.web3forms.com/submit" method="POST"
                     onsubmit="submitForm(event, 'feedback')"
                 >
+                      <input type="hidden" name="access_key" value="b96db7f0-a2bd-4cba-b39d-23198dfedf10">
 
                     <label
                         class="form-label"
